@@ -68,9 +68,6 @@ function uiMoveReset()
     cursorGridX = -1;
     cursorGridY = -1;
 
-    /* Clear path */
-    globals.cursorPath = [];
-
     /* Redraw UI */
     uiRedraw();
 }
@@ -98,37 +95,10 @@ function uiMoveHandler(event)
         return;
     }
 
-    /* Check if touches the previous one */
-    if (globals.cursorPath.length > 0) {
-        const prevPosition = globals.cursorPath[globals.cursorPath.length - 1];
-        if (Math.abs(X - prevPosition.X) + Math.abs(Y - prevPosition.Y) != 1) {
-            return;
-        }
-    }
-
-    /* Check if backtrack */
-    if (globals.cursorPath.length >= 2
-     && globals.cursorPath[globals.cursorPath.length - 2].X == X
-     && globals.cursorPath[globals.cursorPath.length - 2].Y == Y) {
-        /* Remove two elements */
-        globals.cursorPath.pop();
-        globals.cursorPath.pop();
-    }
-
-    /* Check if collide with itself */
-    for (let i = 0; i < globals.cursorPath.length; i++) {
-        if (globals.cursorPath[i].X == X && globals.cursorPath[i].Y == Y) {
-            return;
-        }
-    }
-
     /* Check if used */
     if (globals.game.board.getCellStatus(X, Y)) {
         return;
     }
-
-    /* Add position to cursor path */
-    globals.cursorPath.push({X, Y});
 
     /* Redraw UI */
     uiRedraw();
@@ -156,7 +126,6 @@ function uiMouseDown(event) {
         if (globals.game.board.getCellStatus(position.X, position.Y)) {
             /* Remove path */
             mouseDownStatus = false;
-            globals.game.removePath(position.X, position.Y, true);
             uiRedraw();
         } else {
             mouseDownStatus = true;
@@ -174,7 +143,6 @@ function uiMouseUp(event) {
         const position = uiEventPosition(event);
         if (position != undefined) {
             /* Make move */
-            globals.game.addPath(globals.cursorPath, true);
         }
     }
 

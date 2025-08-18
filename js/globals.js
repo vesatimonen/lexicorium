@@ -6,8 +6,6 @@ var globals = {
     storage:      undefined,
 
     boardMaxSize: 8,
-
-    cursorPath:   []
 };
 
 /*****************************************************************************
