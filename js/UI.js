@@ -60,7 +60,7 @@ function uiBoardRedraw(board) {
     /* Define board elements sizes */
     const textRatio   = 0.42;
     const boxRatio    = 0.90;
-    const borderWidth = 1.0;
+    const borderWidth = 2.0;
     const borderColor = "#202020";
 
     /* Redraw cell content */

@@ -34,19 +34,50 @@
 }
 
 #game-title {
-    margin-top:     10px;
+    margin-top:     3mm;
+    margin-bottom:  6mm;
 
-    font-size:      36px;
+    font-size:      12mm;
     font-weight:    bold;
 
     text-align:     center;
 }
 
+#game-status {
+    margin-top:     0mm;
+    margin-bottom:  2mm;
+
+    font-size:      6mm;
+    font-weight:    normal;
+
+    text-align:     center;
+}
+
+#word-controls {
+    margin-top:     0mm;
+    margin-bottom:  4mm;
+
+    display:        flex;
+}
+#word-controls:after {
+    content:        "";
+    clear:          both;
+    display:        block;
+}
+#word-info {
+    font-size:      9mm;
+    font-weight:    bold;
+    text-align:     center;
+
+    margin:         auto;
+}
+
 
 #game-board {
-    position:       relative;
+    margin-top:     0mm;
+    margin-bottom:  4mm;
 
-    margin-top:     6px;
+    position:       relative;
 
     background:     #B0DDFF;
 
@@ -100,7 +131,8 @@
 
 /*** Game controls ***/
 #game-controls {
-    margin-top:     10px;
+    margin-top:     0mm;
+    margin-bottom:  4mm;
 
     display:        flex;
 }
@@ -119,16 +151,16 @@
     color:          #000000;
     background:     #67BFEC;
     border:         2px solid #202020;
-    border-radius:  16px;
+    border-radius:  10px;
     outline:        0;
 
     /* Size */
-    width:          64px;
-    height:         40px;
+    width:          16mm;
+    height:         10mm;
     padding:        0;
 
-    /* Text position */
-    font-size:      24px;
+    /* Text */
+    font-size:      6mm;
     text-align:     center;
 
 /*    box-shadow:         3px 3px 5px rgb(0,0,0); */
@@ -144,9 +176,8 @@
 }
 
 
-
 #game-info {
-    font-size:      28px;
+    font-size:      9mm;
     font-weight:    bold;
     text-align:     center;
 
@@ -155,17 +186,19 @@
 
 /*** Game instructions ***/
 #game-instructions {
-    margin-top:     10px;
+    margin-top:     0mm;
+    margin-bottom:  2mm;
 
-    font-size:      18px;
+    font-size:      5mm;
     text-align:     center;
 }
 
 /*** Game copyright ***/
 #game-copyright {
-    margin-top:     10px;
+    margin-top:     0mm;
+    margin-bottom:  0mm;
 
-    font-size:      12px;
+    font-size:      3mm;
     text-align:     center;
 }
 
