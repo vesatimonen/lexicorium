@@ -78,12 +78,12 @@ function uiBoardRedraw(board) {
             boardContext.roundRect(startX + boxMargin, startY + boxMargin,
                                    cellSize - 2 * boxMargin, cellSize - 2 * boxMargin,
                                    10);
-/*
-            if (board.getCellStatus(x, y)) {
+
+            if (uiKeyPressed != undefined && x == uiKeyPressed.X && y == uiKeyPressed.Y) {
                 boardContext.fillStyle = usedColor;
                 boardContext.fill();
             }
-*/
+
             boardContext.strokeStyle = borderColor;
             boardContext.lineWidth   = borderWidth;
             boardContext.lineCap     = "round";

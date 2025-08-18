@@ -51,113 +51,64 @@ function uiEventPosition(event) {
 
 
 /*****************************************************************************
- * Event handlers
+ * Key handlers
  *****************************************************************************/
-let mouseDownStatus   = false;
+var uiKeyPressed = undefined;
 
-let cursorGridX = -1;
-let cursorGridY = -1;
-
-
-function uiMoveReset()
+function uiKeyDown()
 {
-    /* Reset mouse status */
-    mouseDownStatus   = false;
-
-    /* Remove cursor from board */
-    cursorGridX = -1;
-    cursorGridY = -1;
-
-    /* Redraw UI */
-    uiRedraw();
-}
-
-
-function uiMoveHandler(event)
-{
-    /* Get cursor grid position */
-    move = uiEventPosition(event);
-    if (move == undefined) {
+    /* Get event position */
+    position = uiEventPosition(event);
+    if (position == undefined) {
         return;
     }
 
-    X = move.X;
-    Y = move.Y;
+    X = position.X;
+    Y = position.Y;
 
     /* Check legality */
     if (X < 0 || Y < 0 || X >= globals.game.board.width || Y >= globals.game.board.height) {
         return;
     }
 
-    /* Check if moved */
-    if (X == cursorGridX && Y == cursorGridY) {
-        /* Not moved */
-        return;
-    }
+/* Check position legality */
 
-    /* Check if used */
-    if (globals.game.board.getCellStatus(X, Y)) {
-        return;
-    }
+    /* Set key pressed information */
+    uiKeyPressed = {X: X, Y: Y};
 
     /* Redraw UI */
     uiRedraw();
+}
 
-    /* Cursor moved in grid */
-    cursorGridX = X;
-    cursorGridY = Y;
+function uiKeyUp()
+{
+    /* Clear key pressed information */
+    uiKeyPressed = undefined;
 
-    return;
+    /* Redraw UI */
+    uiRedraw();
 }
 
 
+
+/*****************************************************************************
+ * Event handlers
+ *****************************************************************************/
 function uiMouseDown(event) {
     event.preventDefault();
-
-    /* Get event position */
-    position = uiEventPosition(event);
-
-console.log(position);
-
-    /* Check position legality */
-    if (position == undefined) {
-        mouseDownStatus = false;
-    } else {
-
-        /* Handle click */
-        if (globals.game.board.getCellStatus(position.X, position.Y)) {
-            /* Remove path */
-            mouseDownStatus = false;
-            uiRedraw();
-        } else {
-            mouseDownStatus = true;
-            uiMoveHandler(event);
-        }
-    }
-
+    uiKeyDown();
     return false;
 }
 
 function uiMouseUp(event) {
     event.preventDefault();
-
-    if (mouseDownStatus == true) {
-        const position = uiEventPosition(event);
-        if (position != undefined) {
-            /* Make move */
-        }
-    }
-
-    uiMoveReset();
-
+    uiKeyUp();
     return false;
 }
 
 function uiMouseLeave(event) {
     event.preventDefault();
-
-    uiMoveReset();
-
+    uiKeyUp();
     return false;
 }
 
