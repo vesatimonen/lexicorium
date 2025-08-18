@@ -47,16 +47,8 @@ function uiRestartMouseDown(event) {
 /*****************************************************************************
  * Register button event handlers
  *****************************************************************************/
-/* UNDO */
-elements.buttonUndo.addEventListener("click", uiUndo);
-
-/* RESTART */
-elements.buttonRestart.addEventListener("click",      uiRestart);
-elements.buttonRestart.addEventListener("mouseup",    uiRestartMouseUp);
-elements.buttonRestart.addEventListener("mouseleave", uiRestartMouseUp);
-elements.buttonRestart.addEventListener("mousedown",  uiRestartMouseDown);
-elements.buttonRestart.addEventListener("touchend",   uiRestartMouseUp);
-elements.buttonRestart.addEventListener("touchstart", uiRestartMouseDown, {passive: true});
+elements.buttonClear.addEventListener("click", uiRestart);
+elements.buttonEnter.addEventListener("click", uiUndo);
 
 function preventZoom(event) {
     /* Disable double click zoom */

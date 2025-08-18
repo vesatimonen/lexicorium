@@ -28,8 +28,8 @@ const elements = {
     title:          document.getElementById("game-title"),
     instructions:   document.getElementById("game-instructions"),
 
-    buttonRestart:  document.getElementById("button-restart"),
-    buttonUndo:     document.getElementById("button-undo"),
+    buttonClear:    document.getElementById("word-restart"),
+    buttonEnter:    document.getElementById("word-enter"),
 
     debug:          document.getElementById("debug-text")
 

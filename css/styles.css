@@ -129,20 +129,6 @@
 }
 
 
-/*** Game controls ***/
-#game-controls {
-    margin-top:     0mm;
-    margin-bottom:  4mm;
-
-    display:        flex;
-}
-
-#game-controls:after {
-    content:        "";
-    clear:          both;
-    display:        block;
-}
-
 .button {
     /* Behaviour */
     display:        block;
@@ -177,6 +163,9 @@
 
 
 #game-info {
+    margin-top:     0mm;
+    margin-bottom:  4mm;
+
     font-size:      9mm;
     font-weight:    bold;
     text-align:     center;
