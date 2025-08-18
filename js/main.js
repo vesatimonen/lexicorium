@@ -1,4 +1,4 @@
-const strorageName = "verborium/game-level";
+const strorageName = "lexicorium/game-progress";
 
 /*****************************************************************************
  * Game challenges (levels)
