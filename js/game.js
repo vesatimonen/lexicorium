@@ -135,8 +135,7 @@ class Board {
         /* Set title */
         const language = this.dbName.slice(0, 3);
         if (language == "FIN") {
-            elements.instructions.innerHTML = "Muodosta perusmuodossa olevia suomen kielen sanoja yhdistämällä sanafragmentit toisiinsa. "
-            + "Yhdistäminen on sallittu vain pysty- ja vaakasuunnassa. Jokainen solu on käytettävä täsmälleen kerran. ";
+            elements.instructions.innerHTML = "Etsi jokaiselle riville ja sarakkeelle sana, joka käyttää vähintään kerran kaikkia sen rivin/sarakkeen ruutuja.";
         }
         if (language =="SWE") {
             elements.instructions.innerHTML = "Bilda svenska ord i grundform genom att förena orddelar med varandra vågrätt och/eller lodrätt. "
