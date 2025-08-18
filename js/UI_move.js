@@ -117,6 +117,8 @@ function uiMouseDown(event) {
     /* Get event position */
     position = uiEventPosition(event);
 
+console.log(position);
+
     /* Check position legality */
     if (position == undefined) {
         mouseDownStatus = false;
@@ -151,16 +153,6 @@ function uiMouseUp(event) {
     return false;
 }
 
-function uiMouseMove(event) {
-    event.preventDefault();
-
-    if (mouseDownStatus == true) {
-        uiMoveHandler(event);
-    }
-
-    return false;
-}
-
 function uiMouseLeave(event) {
     event.preventDefault();
 
@@ -174,12 +166,10 @@ function uiMouseLeave(event) {
  * Register game board event handlers
  *****************************************************************************/
 elements.board.addEventListener("mousedown",  uiMouseDown);
-elements.board.addEventListener("mousemove",  uiMouseMove);
 elements.board.addEventListener("mouseup",    uiMouseUp);
 elements.board.addEventListener("mouseleave", uiMouseLeave);
 
 elements.board.addEventListener("touchstart", uiMouseDown, {passive: true});
-elements.board.addEventListener("touchmove",  uiMouseMove, {passive: true});
 elements.board.addEventListener("touchend",   uiMouseUp);
 
 
