@@ -18,10 +18,10 @@ function uiBoardCellSize() {
  *****************************************************************************/
 function uiButtonsRedraw(game) {
     if (game.undoable()) {
-        elements.buttonEnter.disabled    = false;
+        elements.buttonEnter.disabled = false;
         elements.buttonClear.disabled = false;
     } else {
-        elements.buttonEnter.disabled    = true;
+        elements.buttonEnter.disabled = true;
         elements.buttonClear.disabled = true;
     }
 }

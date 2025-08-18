@@ -1,15 +1,8 @@
 /*****************************************************************************
  * Button handlers
  *****************************************************************************/
-function uiUndo(event) {
-    /* Make undo if possible */
-    globals.game.undoMove();
 
-    /* Redraw UI */
-    uiRedraw();
-}
-
-function uiRestart(event) {
+function uiClear(event) {
     /* Undo all moves back */
     while (true) {
         if (globals.game.undoMove() == false) {
@@ -23,32 +16,20 @@ function uiRestart(event) {
     return false;
 }
 
-var restartTimer;
-function uiRestartMouseUp(event) {
-    clearInterval(restartTimer);
-    return false;
-}
+function uiEnter(event) {
+    /* Make undo if possible */
+    globals.game.undoMove();
 
-function uiRestartMouseDown(event) {
-    restartTimer = setInterval(
-                        function() {
-                            if (globals.game.level == 0) {
-                                clearInterval(restartTimer);
-                            } else {
-                                gameStart(globals.game.level - 1);
-                            }
-                        },
-                        500);
-    return false;
+    /* Redraw UI */
+    uiRedraw();
 }
-
 
 
 /*****************************************************************************
  * Register button event handlers
  *****************************************************************************/
-elements.buttonClear.addEventListener("click", uiRestart);
-elements.buttonEnter.addEventListener("click", uiUndo);
+elements.buttonClear.addEventListener("click", uiClear);
+elements.buttonEnter.addEventListener("click", uiEnter);
 
 function preventZoom(event) {
     /* Disable double click zoom */
