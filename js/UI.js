@@ -59,8 +59,8 @@ function uiBoardRedraw(board) {
 
     /* Define board elements sizes */
     const textRatio   = 0.42;
-    const circleRatio = 0.90;
-    const borderWidth = 0.5;
+    const boxRatio    = 0.90;
+    const borderWidth = 1.0;
     const borderColor = "#202020";
 
     /* Redraw cell content */
@@ -71,19 +71,25 @@ function uiBoardRedraw(board) {
             const startX = cellSize * x;
             const startY = cellSize * y;
 
-            /* Draw value circles */
+            /* Cell borders */
             boardContext.beginPath();
-            boardContext.arc(middleX, middleY, circleRatio * cellSize / 2, 0, Math.PI * 2); // x, y, radius, startAngle, endAngle
+            const boxMargin = (cellSize - boxRatio * cellSize) / 2.0;
+//            const boxMargin = 0;
+            boardContext.roundRect(startX + boxMargin, startY + boxMargin,
+                                   cellSize - 2 * boxMargin, cellSize - 2 * boxMargin,
+                                   10);
+/*
             if (board.getCellStatus(x, y)) {
                 boardContext.fillStyle = usedColor;
                 boardContext.fill();
             }
+*/
             boardContext.strokeStyle = borderColor;
             boardContext.lineWidth   = borderWidth;
             boardContext.lineCap     = "round";
             boardContext.stroke();
 
-            /* Draw value inside a cell */
+            /* Cell content */
             const fontWeight = "bold";
             const fontStyle  = "normal";
             const fontSize   = (cellSize * textRatio) + "px";
