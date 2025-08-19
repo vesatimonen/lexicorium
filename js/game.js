@@ -150,6 +150,9 @@ class Game {
         /* Game board */
         this.board = new Board();
 
+        /* Word */
+        this.word = "";
+
         /* Game level */
         this.level = 0;
     }
@@ -162,47 +165,23 @@ class Game {
         this.level = level;
     }
 
-    addPath(wordPath, track) {
+    wordAddFragment(X, Y) {
         /* Check path legality */
-        let word = "";
-        for (let i = 0; i < wordPath.length; i++) {
-            const X = wordPath[i].X;
-            const Y = wordPath[i].Y;
-
-            if (this.board.keyIsEnabled(X, Y) == true) {
-                return;
-            }
-
-            word = word + this.board.fragments[X][Y];
+        if (this.board.keyIsEnabled(X, Y) == true) {
+            return;
         }
+        let word = "";
+        word = word + this.board.fragments[X][Y];
         word = word.toUpperCase();
+    }
 
+    wordClear() {
+    }
+
+    wordEnter() {
         /* Check word legality */
         if (this.board.wordSet.has(word) == false) {
             return;
-        }
-
-        /* Make move */
-        this.board.paths.push(wordPath);
-        for (let i = 0; i < wordPath.length; i++) {
-            const X = wordPath[i].X;
-            const Y = wordPath[i].Y;
-            this.board.keyEnable(X, Y);
-        }
-    }
-
-    removePath(X, Y, track) {
-        const id = this.board.getCellId(X, Y);
-        if (id >= 0) {
-            /* Remove path */
-            const path = this.board.paths[id];
-
-            for (let i = 0; i < path.length; i++) {
-                this.board.keyDisable(path[i].X, path[i].Y);
-            }
-
-            /* Remove path from paths array */
-            this.board.paths.splice(id, 1);
         }
     }
 
