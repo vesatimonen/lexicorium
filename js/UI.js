@@ -37,7 +37,7 @@ function uiInfoRedraw(game) {
  * Redraw word
  *****************************************************************************/
 function uiWordRedraw(board) {
-    elements.wordInfo.innerHTML = "test";
+    elements.wordInfo.innerHTML = board.word;
 }
 
 /*****************************************************************************

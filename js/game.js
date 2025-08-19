@@ -29,6 +29,9 @@ class Board {
         /* Word database (set) */
         this.wordSet   = undefined;
 
+        /* Word */
+        this.word = "";
+
         /* Cell statuses */
         this.cells = [[undefined]];
     }
@@ -118,9 +121,6 @@ class Game {
     constructor() {
         /* Game board */
         this.board = new Board();
-
-        /* Word */
-        this.word = "";
 
         /* Game level */
         this.level = 0;
