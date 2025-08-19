@@ -77,7 +77,9 @@ class Board {
             return;
         }
 
-        this.word = this.word + this.fragments[X][Y];
+        if (this.word.length < 20) {
+            this.word = this.word + this.fragments[X][Y];
+        }
     }
 
     solved() {
