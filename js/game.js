@@ -1,5 +1,5 @@
 /* Create and initialize 2D array */
-function array2D(width, height, value) {
+function array2D(width, height) {
     let arr = [];
 
     // creating two dimensional array
@@ -10,7 +10,7 @@ function array2D(width, height, value) {
     // inserting elements to array
     for (let i = 0; i < width; i++) {
         for(let j = 0; j < height; j++) {
-            arr[i][j] = value;
+            arr[i][j] = undefined;
         }
     }
 
@@ -34,6 +34,9 @@ class Board {
 
         /* Cell statuses */
         this.cells = [[undefined]];
+
+        /* Pressed keys */
+        this.pressed = [[undefined]];
     }
 
     keyIsEnabled(x, y) {
@@ -119,12 +122,14 @@ class Board {
         this.height     = parseInt(infoValues[0].substr(2,1));
         this.dbName     = infoValues[1];
 
-        this.fragments  = array2D(this.width, this.height, 0);
-        this.cells      = array2D(this.width, this.height, 0);
+        this.fragments  = array2D(this.width, this.height);
+        this.cells      = array2D(this.width, this.height);
+        this.pressed    = array2D(this.width, this.height);
         for (let x = 0; x < this.width; x++) {
             for (let y = 0; y < this.height; y++) {
                 this.fragments[x][y] = infoValues[2 + y * this.width + x];
                 this.cells[x][y]     = {status: false};
+                this.pressed[x][y]   = false;
             }
         }
 
