@@ -116,9 +116,9 @@ class Board {
             return "WORD NOT FOUND";
         }
 
-//        this.wordClear();
+        this.wordClear();
 
-        return "FOUND";
+        return "";
     }
 
     wordLength() {
