@@ -11,9 +11,7 @@ function uiClear(event) {
 }
 
 function uiEnter(event) {
-    status = globals.game.board.wordEnter();
-
-    elements.wordStatus.innerHTML = status;
+    globals.game.board.wordEnter();
 
     /* Redraw UI */
     uiRedraw();

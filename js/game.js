@@ -29,6 +29,9 @@ class Board {
         /* Word database (set) */
         this.wordSet   = undefined;
 
+        /* Status */
+        this.status = "";
+
         /* Word */
         this.word = "";
 
@@ -90,6 +93,10 @@ class Board {
         this.pressedCol.fill(false);
     }
 
+    statusClear() {
+        this.status = "";
+    }
+
     wordEnter() {
         /* Check word using all fragments */
         var rowCount = 0;
@@ -106,19 +113,19 @@ class Board {
         }
 
         if (rowCount != this.pressedRow.length && colCount != this.pressedCol.length) {
-            return "USE ALL TILES IN A ROW/COL";
+            this.status = "USE ALL TILES IN A ROW/COL";
+            return;
         }
 
-        var upperWord = this.word.toUpperCase();
-
         /* Check word in DB */
+        var upperWord = this.word.toUpperCase();
         if (this.wordSet.has(upperWord) == false) {
-            return "WORD NOT FOUND";
+            this.status = "WORD NOT FOUND";
+            return;
         }
 
         this.wordClear();
-
-        return "";
+        this.statusClear();
     }
 
     wordLength() {

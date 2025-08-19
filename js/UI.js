@@ -34,6 +34,13 @@ function uiInfoRedraw(game) {
 }
 
 /*****************************************************************************
+ * Redraw status
+ *****************************************************************************/
+function uiStatusRedraw(board) {
+    elements.wordStatus.innerHTML = board.status;
+}
+
+/*****************************************************************************
  * Redraw word
  *****************************************************************************/
 function uiWordRedraw(board) {
@@ -125,16 +132,11 @@ function uiBoardRedraw(board) {
  * Redraw UI
  *****************************************************************************/
 function uiRedraw() {
-    /* Redraw word */
+    /* Redraw board elements */
+    uiStatusRedraw(globals.game.board);
     uiWordRedraw(globals.game.board);
-
-    /* Redraw board */
     uiBoardRedraw(globals.game.board);
-
-    /* Redraw info */
     uiInfoRedraw(globals.game);
-
-    /* Redraw buttons */
     uiButtonsRedraw(globals.game.board);
 
     /* Check if end of level */
