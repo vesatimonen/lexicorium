@@ -96,6 +96,8 @@ class Board {
         }
 
         this.wordClear();
+
+        return "STATUSIS";
     }
 
     wordLength() {
