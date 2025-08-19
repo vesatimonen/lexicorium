@@ -70,9 +70,8 @@ function uiKeyDown(board)
     }
 
     /* Check position legality */
-    if (board.keyIsEnabled(x, y)) {
-        boardContext.fillStyle = usedColor;
-        boardContext.fill();
+    if (board.keyIsEnabled(X, Y) == false) {
+        return;
     }
 
     /* Set key pressed information */
