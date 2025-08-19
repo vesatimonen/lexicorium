@@ -55,7 +55,7 @@ function uiEventPosition(event) {
  *****************************************************************************/
 var uiKeyPressed = undefined;
 
-function uiKeyDown()
+function uiKeyDown(board)
 {
     /* Get event position */
     position = uiEventPosition(event);
@@ -71,7 +71,11 @@ function uiKeyDown()
         return;
     }
 
-/* Check position legality */
+    /* Check position legality */
+    if (board.keyIsEnabled(x, y)) {
+        boardContext.fillStyle = usedColor;
+        boardContext.fill();
+    }
 
     /* Set key pressed information */
     uiKeyPressed = {X: X, Y: Y};
@@ -80,7 +84,7 @@ function uiKeyDown()
     uiRedraw();
 }
 
-function uiKeyUp()
+function uiKeyUp(board)
 {
     /* Clear key pressed information */
     uiKeyPressed = undefined;
@@ -96,19 +100,19 @@ function uiKeyUp()
  *****************************************************************************/
 function uiMouseDown(event) {
     event.preventDefault();
-    uiKeyDown();
+    uiKeyDown(globals.game.board);
     return false;
 }
 
 function uiMouseUp(event) {
     event.preventDefault();
-    uiKeyUp();
+    uiKeyUp(globals.game.board);
     return false;
 }
 
 function uiMouseLeave(event) {
     event.preventDefault();
-    uiKeyUp();
+    uiKeyUp(globals.game.board);
     return false;
 }
 

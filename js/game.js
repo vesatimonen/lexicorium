@@ -45,7 +45,7 @@ class Board {
         return count;
     }
 
-    getCellStatus(x, y) {
+    keyIsEnabled(x, y) {
         if (x < 0 || y < 0 || x >= this.width || y >= this.height) {
             return false;
         }
@@ -178,7 +178,7 @@ class Game {
             const X = wordPath[i].X;
             const Y = wordPath[i].Y;
 
-            if (this.board.getCellStatus(X, Y) == true) {
+            if (this.board.keyIsEnabled(X, Y) == true) {
                 return;
             }
 
