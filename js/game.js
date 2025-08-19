@@ -42,6 +42,19 @@ class Board {
             return false;
         }
 
+        var rowCount = 0;
+        for (let row = 0; row < this.pressedRow.length; row++) {
+            if (this.pressedRow[row] == true || y == row) {
+                rowCount++;
+            }
+        }
+        var colCount = 0;
+        for (let col = 0; col < this.pressedCol.length; col++) {
+            if (this.pressedCol[col] == true || x == col) {
+                colCount++;
+            }
+        }
+
         return true;
     }
 
