@@ -31,7 +31,7 @@ const elements = {
     instructions:   document.getElementById("game-instructions"),
 
     wordStatus:     document.getElementById("word-status"),
-    wordInfo:       document.getElementById("word-info"),
+    wordInfo:       document.getElementById("word-info-text"),
     buttonClear:    document.getElementById("word-clear"),
     buttonEnter:    document.getElementById("word-enter"),
 

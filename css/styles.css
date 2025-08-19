@@ -74,6 +74,13 @@
     margin:         auto;
 }
 
+.cursor {
+    animation: blink 1.5s steps(1) infinite;
+}
+@keyframes blink {
+  70% { opacity: 0; }
+}
+
 
 #game-board {
     margin-top:     0mm;
