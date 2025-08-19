@@ -34,7 +34,8 @@ class Board {
 
         /* Pressed keys */
         this.pressed = [[undefined]];
-
+        this.pressedRow = [undefined];
+        this.pressedCol = [undefined];
     }
 
     keyIsEnabled(x, y) {
@@ -64,6 +65,8 @@ class Board {
     wordClear() {
         this.word = "";
         this.pressed.fill(false);
+        this.pressedRow.fill(false);
+        this.pressedCol.fill(false);
     }
 
     wordEnter() {
@@ -96,13 +99,18 @@ class Board {
         this.dbName     = infoValues[1];
 
         this.fragments  = array2D(this.width, this.height);
-        this.pressed    = array2D(this.width, this.height);
         for (let x = 0; x < this.width; x++) {
             for (let y = 0; y < this.height; y++) {
                 this.fragments[x][y] = infoValues[2 + y * this.width + x];
-                this.pressed[x][y]   = false;
             }
         }
+
+        this.pressed    = array2D(this.width, this.height);
+        this.pressedRow = Array(this.height);
+        this.pressedCol = Array(this.width);
+        this.pressed.fill(false);
+        this.pressedRow.fill(false);
+        this.pressedCol.fill(false);
 
         /* Set title */
         const language = this.dbName.slice(0, 3);
