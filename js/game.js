@@ -60,14 +60,24 @@ class Board {
         return this.cells[x][y].status;
     }
 
-    setCellStatus(x, y, status) {
+    keyEnable(x, y) {
         if (x < 0 || y < 0 || x >= this.width || y >= this.height) {
             return false;
         }
         if (this.cells == undefined) {
             return false;
         }
-        this.cells[x][y] = {status: status};
+        this.cells[x][y] = {status: true};
+    }
+
+    keyDisable(x, y) {
+        if (x < 0 || y < 0 || x >= this.width || y >= this.height) {
+            return false;
+        }
+        if (this.cells == undefined) {
+            return false;
+        }
+        this.cells[x][y] = {status: false};
     }
 
     getCellId(x, y) {
@@ -196,7 +206,7 @@ class Game {
         for (let i = 0; i < wordPath.length; i++) {
             const X = wordPath[i].X;
             const Y = wordPath[i].Y;
-            this.board.setCellStatus(X, Y, true);
+            this.board.keyEnable(X, Y);
         }
 
         /* Add to history */
@@ -217,7 +227,7 @@ class Game {
             }
 
             for (let i = 0; i < path.length; i++) {
-                this.board.setCellStatus(path[i].X, path[i].Y, false);
+                this.board.keyDisable(path[i].X, path[i].Y);
             }
 
             /* Remove path from paths array */

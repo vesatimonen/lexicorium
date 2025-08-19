@@ -6,6 +6,8 @@ var globals = {
     storage:      undefined,
 
     boardMaxSize: 6,
+
+    uiKeyPressed: undefined,
 };
 
 /*****************************************************************************
@@ -32,7 +34,6 @@ const elements = {
     buttonEnter:    document.getElementById("word-enter"),
 
     debug:          document.getElementById("debug-text")
-
 };
 
 

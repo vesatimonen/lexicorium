@@ -79,9 +79,11 @@ function uiBoardRedraw(board) {
                                    cellSize - 2 * boxMargin, cellSize - 2 * boxMargin,
                                    10);
 
-            if (uiKeyPressed != undefined && x == uiKeyPressed.X && y == uiKeyPressed.Y) {
-                boardContext.fillStyle = usedColor;
-                boardContext.fill();
+            if (globals.uiKeyPressed != undefined) {
+                if (x == globals.uiKeyPressed.X && y == globals.uiKeyPressed.Y) {
+                    boardContext.fillStyle = usedColor;
+                    boardContext.fill();
+                }
             }
 
             boardContext.strokeStyle = borderColor;

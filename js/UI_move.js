@@ -53,8 +53,6 @@ function uiEventPosition(event) {
 /*****************************************************************************
  * Key handlers
  *****************************************************************************/
-var uiKeyPressed = undefined;
-
 function uiKeyDown(board)
 {
     /* Get event position */
@@ -78,7 +76,7 @@ function uiKeyDown(board)
     }
 
     /* Set key pressed information */
-    uiKeyPressed = {X: X, Y: Y};
+    globals.uiKeyPressed = {X: X, Y: Y};
 
     /* Redraw UI */
     uiRedraw();
@@ -87,7 +85,7 @@ function uiKeyDown(board)
 function uiKeyUp(board)
 {
     /* Clear key pressed information */
-    uiKeyPressed = undefined;
+    globals.uiKeyPressed = undefined;
 
     /* Redraw UI */
     uiRedraw();
