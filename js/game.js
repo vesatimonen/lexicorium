@@ -91,6 +91,11 @@ class Board {
 
     wordClear() {
         this.word = "";
+        for (let x = 0; x < this.width; x++) {
+            for (let y = 0; y < this.height; y++) {
+                this.pressed[x][y]   = false;
+            }
+        }
     }
 
     wordEnter() {
@@ -98,7 +103,7 @@ class Board {
         if (this.wordSet.has(this.word) == false) {
         }
 
-        this.word = "";
+        this.wordClear();
     }
 
     wordExists() {
@@ -123,7 +128,7 @@ class Board {
         this.dbName     = infoValues[1];
 
         this.fragments  = array2D(this.width, this.height);
-        this.status      = array2D(this.width, this.height);
+        this.status     = array2D(this.width, this.height);
         this.pressed    = array2D(this.width, this.height);
         for (let x = 0; x < this.width; x++) {
             for (let y = 0; y < this.height; y++) {
