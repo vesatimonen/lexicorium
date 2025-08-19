@@ -71,32 +71,6 @@ class Board {
         this.cells[x][y] = {status: false};
     }
 
-    getCellId(x, y) {
-        if (x < 0 || y < 0 || x >= this.width || y >= this.height) {
-            return false;
-        }
-        if (this.cells == undefined) {
-            return false;
-        }
-
-        if (this.cells[x][y] == undefined) {
-            return false;
-        }
-
-        /* Go through paths and find cell id */
-        const paths = this.paths;
-        for (let i = 0; i < paths.length; i++) {
-            const path = paths[i];
-            for (let j = 0; j < path.length; j++) {
-                if (path[j].X == x && path[j].Y == y) {
-                    return i;
-                }
-            }
-        }
-
-        return -1; /* Not found */
-    }
-
     solved() {
         return false;
     }
