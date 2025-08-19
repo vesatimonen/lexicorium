@@ -222,25 +222,6 @@ class Game {
         }
     }
 
-    undoMove() {
-        if (this.moves.length == 0) {
-            return false;
-        }
-
-        /* Undo move */
-        const move = this.moves.pop();
-        switch (move.command) {
-            case "add":
-                this.removePath(move.path[0].X, move.path[0].Y, false);
-                break;
-            case "remove":
-                this.addPath(move.path, false);
-                break;
-        }
-
-        return true;
-    }
-
     undoable() {
         if (this.moves.length == 0) {
             return false;

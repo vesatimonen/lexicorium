@@ -3,25 +3,15 @@
  *****************************************************************************/
 
 function uiClear(event) {
-    /* Undo all moves back */
-    while (true) {
-        if (globals.game.undoMove() == false) {
-            break;
-        }
-    }
-
     /* Redraw UI */
     uiRedraw();
-
     return false;
 }
 
 function uiEnter(event) {
-    /* Make undo if possible */
-    globals.game.undoMove();
-
     /* Redraw UI */
     uiRedraw();
+    return false;
 }
 
 
