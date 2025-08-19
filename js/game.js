@@ -91,13 +91,33 @@ class Board {
     }
 
     wordEnter() {
-        /* Check word legality */
-        if (this.wordSet.has(this.word) == false) {
+        /* Check word using all fragments */
+        var rowCount = 0;
+        for (let row = 0; row < this.pressedRow.length; row++) {
+            if (this.pressedRow[row] == true) {
+                rowCount++;
+            }
+        }
+        var colCount = 0;
+        for (let col = 0; col < this.pressedCol.length; col++) {
+            if (this.pressedCol[col] == true) {
+                colCount++;
+            }
         }
 
-        this.wordClear();
+        if (rowCount != this.pressedRow.length && colCount != this.pressedCol.length) {
+            return "USE ALL ROW/COL TILES";
+        }
 
-        return "STATUSIS";
+
+        /* Check word in DB */
+        if (this.wordSet.has(this.word) == false) {
+            return "NOT IN WORD LIST";
+        }
+
+//        this.wordClear();
+
+        return "FOUND";
     }
 
     wordLength() {

@@ -45,12 +45,13 @@
 
 #word-status {
     margin-top:     0mm;
-    margin-bottom:  2mm;
+    margin-bottom:  0mm;
 
-    height:         6mm;
+    height:         4mm;
 
-    font-size:      6mm;
+    font-size:      4mm;
     font-weight:    normal;
+    font-style:     italic;
 
     text-align:     center;
 }
