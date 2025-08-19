@@ -33,7 +33,7 @@ class Board {
         this.word = "";
 
         /* Cell statuses */
-        this.cells = [[undefined]];
+        this.status = [[undefined]];
 
         /* Pressed keys */
         this.pressed = [[undefined]];
@@ -43,35 +43,35 @@ class Board {
         if (x < 0 || y < 0 || x >= this.width || y >= this.height) {
             return false;
         }
-        if (this.cells == undefined) {
+        if (this.status == undefined) {
             return false;
         }
 
-        if (this.cells[x][y] == undefined) {
+        if (this.status[x][y] == undefined) {
             return false;
         }
 
-        return this.cells[x][y].status;
+        return this.status[x][y];
     }
 
     keyEnable(x, y) {
         if (x < 0 || y < 0 || x >= this.width || y >= this.height) {
             return false;
         }
-        if (this.cells == undefined) {
+        if (this.status == undefined) {
             return false;
         }
-        this.cells[x][y] = {status: true};
+        this.status[x][y] = true;
     }
 
     keyDisable(x, y) {
         if (x < 0 || y < 0 || x >= this.width || y >= this.height) {
             return false;
         }
-        if (this.cells == undefined) {
+        if (this.status == undefined) {
             return false;
         }
-        this.cells[x][y] = {status: false};
+        this.status[x][y] = false;
     }
 
     keyPressed(X, Y) {
@@ -123,12 +123,12 @@ class Board {
         this.dbName     = infoValues[1];
 
         this.fragments  = array2D(this.width, this.height);
-        this.cells      = array2D(this.width, this.height);
+        this.status      = array2D(this.width, this.height);
         this.pressed    = array2D(this.width, this.height);
         for (let x = 0; x < this.width; x++) {
             for (let y = 0; y < this.height; y++) {
                 this.fragments[x][y] = infoValues[2 + y * this.width + x];
-                this.cells[x][y]     = {status: false};
+                this.status[x][y]    = false;
                 this.pressed[x][y]   = false;
             }
         }
