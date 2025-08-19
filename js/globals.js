@@ -30,7 +30,8 @@ const elements = {
     title:          document.getElementById("game-title"),
     instructions:   document.getElementById("game-instructions"),
 
-    buttonClear:    document.getElementById("word-restart"),
+    wordInfo:       document.getElementById("word-info"),
+    buttonClear:    document.getElementById("word-clear"),
     buttonEnter:    document.getElementById("word-enter"),
 
     gameInfo:       document.getElementById("game-info"),
