@@ -71,19 +71,19 @@ class Board {
         this.cells[x][y] = {status: false};
     }
 
+    keyPressed(X, Y) {
+        /* Check path legality */
+        if (this.keyIsEnabled(X, Y) == true) {
+            return;
+        }
+
+        this.word = this.word + this.fragments[X][Y];
+    }
+
     solved() {
         return false;
     }
 
-    wordAddFragment(X, Y) {
-        /* Check path legality */
-        if (this.board.keyIsEnabled(X, Y) == true) {
-            return;
-        }
-        let word = "";
-        word = word + this.board.fragments[X][Y];
-        word = word.toUpperCase();
-    }
 
     wordClear() {
     }

@@ -78,6 +78,8 @@ function uiKeyDown(board)
     /* Set key pressed information */
     globals.uiKeyPressed = {X: X, Y: Y};
 
+    board.keyPressed(X, Y);
+
     /* Redraw UI */
     uiRedraw();
 }
