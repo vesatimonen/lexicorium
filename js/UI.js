@@ -27,11 +27,17 @@ function uiButtonsRedraw(game) {
 }
 
 /*****************************************************************************
- * Redraw level elements
+ * Redraw level element
  *****************************************************************************/
 function uiInfoRedraw(game) {
-    let gameInfo = document.getElementById("game-info");
-    gameInfo.innerHTML = "L" + (game.level + 1) + "/" + options.challenges.length;
+    elements.gameInfo.innerHTML = "L" + (game.level + 1) + "/" + options.challenges.length;
+}
+
+/*****************************************************************************
+ * Redraw word
+ *****************************************************************************/
+function uiWordRedraw(board) {
+
 }
 
 /*****************************************************************************
@@ -112,6 +118,9 @@ function uiBoardRedraw(board) {
  * Redraw UI
  *****************************************************************************/
 function uiRedraw() {
+    /* Redraw word */
+    uiWordRedraw(globals.game.board);
+
     /* Redraw board */
     uiBoardRedraw(globals.game.board);
 

@@ -33,6 +33,8 @@ const elements = {
     buttonClear:    document.getElementById("word-restart"),
     buttonEnter:    document.getElementById("word-enter"),
 
+    gameInfo:       document.getElementById("game-info"),
+
     debug:          document.getElementById("debug-text")
 };
 
