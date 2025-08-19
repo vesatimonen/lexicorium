@@ -29,10 +29,7 @@ class Board {
         /* Word database (set) */
         this.wordSet   = undefined;
 
-        /* Paths */
-        this.paths       = [];
-
-        /* Cells status */
+        /* Cell statuses */
         this.cells = [[undefined]];
     }
 
@@ -92,10 +89,8 @@ class Board {
         this.height     = parseInt(infoValues[0].substr(2,1));
         this.dbName     = infoValues[1];
 
-        this.paths       = [];
-
         this.fragments  = array2D(this.width, this.height, 0);
-        this.cells   = array2D(this.width, this.height, 0);
+        this.cells      = array2D(this.width, this.height, 0);
         for (let x = 0; x < this.width; x++) {
             for (let y = 0; y < this.height; y++) {
                 this.fragments[x][y] = infoValues[2 + y * this.width + x];
