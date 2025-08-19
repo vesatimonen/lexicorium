@@ -222,7 +222,7 @@ class Game {
         }
     }
 
-    undoable() {
+    wordExists() {
         if (this.moves.length == 0) {
             return false;
         }

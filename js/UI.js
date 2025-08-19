@@ -17,7 +17,7 @@ function uiBoardCellSize() {
  * Redraw buttons
  *****************************************************************************/
 function uiButtonsRedraw(game) {
-    if (game.undoable()) {
+    if (game.wordExists()) {
         elements.buttonEnter.disabled = false;
         elements.buttonClear.disabled = false;
     } else {
