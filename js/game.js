@@ -32,9 +32,6 @@ class Board {
         /* Word */
         this.word = "";
 
-        /* Cell statuses */
-        this.status = [[undefined]];
-
         /* Pressed keys */
         this.pressed = [[undefined]];
     }
@@ -43,21 +40,14 @@ class Board {
         if (x < 0 || y < 0 || x >= this.width || y >= this.height) {
             return false;
         }
-        if (this.status == undefined) {
-            return false;
-        }
 
-        if (this.status[x][y] == undefined) {
-            return false;
-        }
-
-        return this.status[x][y];
+        return true;
     }
 
 
     keyPressed(X, Y) {
         /* Check path legality */
-        if (this.keyIsEnabled(X, Y) == true) {
+        if (this.keyIsEnabled(X, Y) == false) {
             return;
         }
 
@@ -109,12 +99,10 @@ class Board {
         this.dbName     = infoValues[1];
 
         this.fragments  = array2D(this.width, this.height);
-        this.status     = array2D(this.width, this.height);
         this.pressed    = array2D(this.width, this.height);
         for (let x = 0; x < this.width; x++) {
             for (let y = 0; y < this.height; y++) {
                 this.fragments[x][y] = infoValues[2 + y * this.width + x];
-                this.status[x][y]    = false;
                 this.pressed[x][y]   = false;
             }
         }
