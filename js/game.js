@@ -55,6 +55,11 @@ class Board {
             }
         }
 
+        if (rowCount > 1 && colCount > 1) {
+            // Not possible
+            return false;
+        }
+
         return true;
     }
 
