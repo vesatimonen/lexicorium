@@ -150,9 +150,6 @@ class Game {
         /* Game board */
         this.board = new Board();
 
-        /* Game move history */
-        this.moves = [];
-
         /* Game level */
         this.level = 0;
     }
@@ -160,9 +157,6 @@ class Game {
     init(level, info) {
         /* Initialize board */
         this.board.init(info);
-
-        /* Clear moves history */
-        this.moves = [];
 
         /* Set level */
         this.level = level;
@@ -195,11 +189,6 @@ class Game {
             const Y = wordPath[i].Y;
             this.board.keyEnable(X, Y);
         }
-
-        /* Add to history */
-        if (track == true) {
-            this.moves.push({command: "add", path: wordPath});
-        }
     }
 
     removePath(X, Y, track) {
@@ -207,11 +196,6 @@ class Game {
         if (id >= 0) {
             /* Remove path */
             const path = this.board.paths[id];
-
-            /* Add to removed path to history */
-            if (track == true)  {
-                this.moves.push({command: "remove", path: path});
-            }
 
             for (let i = 0; i < path.length; i++) {
                 this.board.keyDisable(path[i].X, path[i].Y);
@@ -223,9 +207,6 @@ class Game {
     }
 
     wordExists() {
-        if (this.moves.length == 0) {
-            return false;
-        }
         return true;
     }
 }
