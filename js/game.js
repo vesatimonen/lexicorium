@@ -88,13 +88,10 @@ class Board {
     }
 
     wordClear() {
+        this.status = "";
         this.word = "";
         this.pressedRow.fill(false);
         this.pressedCol.fill(false);
-    }
-
-    statusClear() {
-        this.status = "";
     }
 
     wordEnter() {
@@ -125,7 +122,6 @@ class Board {
         }
 
         this.wordClear();
-        this.statusClear();
     }
 
     wordLength() {
