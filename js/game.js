@@ -84,15 +84,17 @@ class Board {
         return false;
     }
 
-
     wordClear() {
+        this.word = "";
     }
 
     wordEnter() {
         /* Check word legality */
-        if (this.board.wordSet.has(word) == false) {
+        if (this.wordSet.has(this.word) == false) {
             return;
         }
+
+        this.word = "";
     }
 
     wordExists() {

@@ -3,12 +3,16 @@
  *****************************************************************************/
 
 function uiClear(event) {
+    globals.game.board.wordClear();
+
     /* Redraw UI */
     uiRedraw();
     return false;
 }
 
 function uiEnter(event) {
+    globals.game.board.wordEnter();
+
     /* Redraw UI */
     uiRedraw();
     return false;
