@@ -68,7 +68,7 @@ function uiBoardRedraw(board) {
     const boxRatio    = 0.90;
     const borderWidth = 2.0;
     const enabledColor  = "#202020";
-    const disabledColor = "#20202040";
+    const disabledColor = "#20202080";
 
     /* Redraw cell content */
     for (y = 0; y < board.height; y++) {
@@ -81,7 +81,7 @@ function uiBoardRedraw(board) {
             /* Define color */
             var color = enabledColor;
             if (board.keyIsEnabled(x, y) == false) {
-//                color = disabledColor;
+                color = disabledColor;
             }
 
             /* Cell borders */
