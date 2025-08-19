@@ -67,7 +67,8 @@ function uiBoardRedraw(board) {
     const textRatio   = 0.42;
     const boxRatio    = 0.90;
     const borderWidth = 2.0;
-    const borderColor = "#202020";
+    const enabledColor  = "#202020";
+    const disabledColor = "#20202040";
 
     /* Redraw cell content */
     for (y = 0; y < board.height; y++) {
@@ -76,6 +77,12 @@ function uiBoardRedraw(board) {
             const middleY = cellSize * y + cellSize / 2;
             const startX = cellSize * x;
             const startY = cellSize * y;
+
+            /* Define color */
+            var color = enabledColor;
+            if (board.keyIsEnabled(x, y) == false) {
+//                color = disabledColor;
+            }
 
             /* Cell borders */
             boardContext.beginPath();
@@ -92,7 +99,7 @@ function uiBoardRedraw(board) {
                 }
             }
 
-            boardContext.strokeStyle = borderColor;
+            boardContext.strokeStyle = color;
             boardContext.lineWidth   = borderWidth;
             boardContext.lineCap     = "round";
             boardContext.stroke();
@@ -106,7 +113,7 @@ function uiBoardRedraw(board) {
             boardContext.font         = `${fontWeight} ${fontStyle} ${fontSize} ${fontFamily}`;
             boardContext.textBaseline = "middle";
             boardContext.textAlign    = "center";
-            boardContext.fillStyle    = borderColor;
+            boardContext.fillStyle    = color;
             boardContext.fillText(board.fragments[x][y], middleX, middleY);
         }
     }
