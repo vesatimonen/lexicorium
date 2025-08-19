@@ -54,25 +54,6 @@ class Board {
         return this.status[x][y];
     }
 
-    keyEnable(x, y) {
-        if (x < 0 || y < 0 || x >= this.width || y >= this.height) {
-            return false;
-        }
-        if (this.status == undefined) {
-            return false;
-        }
-        this.status[x][y] = true;
-    }
-
-    keyDisable(x, y) {
-        if (x < 0 || y < 0 || x >= this.width || y >= this.height) {
-            return false;
-        }
-        if (this.status == undefined) {
-            return false;
-        }
-        this.status[x][y] = false;
-    }
 
     keyPressed(X, Y) {
         /* Check path legality */
@@ -106,8 +87,8 @@ class Board {
         this.wordClear();
     }
 
-    wordExists() {
-        return true;
+    wordLength() {
+        return this.word.length;
     }
 
     /* Initialize game */
