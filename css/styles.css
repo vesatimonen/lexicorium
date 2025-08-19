@@ -75,10 +75,10 @@
 }
 
 .cursor {
-    animation: blink 1.5s steps(1) infinite;
+    animation: blink 1.0s steps(1) infinite;
 }
 @keyframes blink {
-  70% { opacity: 0; }
+  50% { opacity: 0; }
 }
 
 
