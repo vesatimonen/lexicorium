@@ -34,6 +34,7 @@ class Board {
 
         /* Pressed keys */
         this.pressed = [[undefined]];
+
     }
 
     keyIsEnabled(x, y) {
@@ -62,11 +63,7 @@ class Board {
 
     wordClear() {
         this.word = "";
-        for (let x = 0; x < this.width; x++) {
-            for (let y = 0; y < this.height; y++) {
-                this.pressed[x][y]   = false;
-            }
-        }
+        this.pressed.fill(false);
     }
 
     wordEnter() {
