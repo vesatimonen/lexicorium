@@ -33,7 +33,6 @@ class Board {
         this.word = "";
 
         /* Pressed keys */
-        this.pressed = [[undefined]];
         this.pressedRow = [undefined];
         this.pressedCol = [undefined];
     }
@@ -53,9 +52,14 @@ class Board {
             return;
         }
 
-        if (this.word.length < 20) {
-            this.word = this.word + this.fragments[X][Y];
+        if (this.word.length > 20) {
+            return;
         }
+
+        this.word = this.word + this.fragments[X][Y];
+
+        this.pressedRow[Y] = true;
+        this.pressedCol[X] = true;
     }
 
     solved() {
@@ -64,7 +68,6 @@ class Board {
 
     wordClear() {
         this.word = "";
-        this.pressed.fill(false);
         this.pressedRow.fill(false);
         this.pressedCol.fill(false);
     }
@@ -105,10 +108,8 @@ class Board {
             }
         }
 
-        this.pressed    = array2D(this.width, this.height);
         this.pressedRow = Array(this.height);
         this.pressedCol = Array(this.width);
-        this.pressed.fill(false);
         this.pressedRow.fill(false);
         this.pressedCol.fill(false);
 
