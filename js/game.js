@@ -88,11 +88,15 @@ class Board {
     }
 
     wordClear() {
-        this.status = "";
         this.word = "";
         this.pressedRow.fill(false);
         this.pressedCol.fill(false);
     }
+
+    statusClear() {
+        this.status = "";
+    }
+
 
     wordEnter() {
         /* Check word using all fragments */
@@ -111,6 +115,7 @@ class Board {
 
         if (rowCount != this.pressedRow.length && colCount != this.pressedCol.length) {
             this.status = "USE ALL TILES IN A ROW/COL";
+            this.wordClear();
             return;
         }
 
@@ -118,9 +123,11 @@ class Board {
         var upperWord = this.word.toUpperCase();
         if (this.wordSet.has(upperWord) == false) {
             this.status = "WORD NOT FOUND";
+            this.wordClear();
             return;
         }
 
+        this.statusClear();
         this.wordClear();
     }
 
