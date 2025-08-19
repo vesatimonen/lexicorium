@@ -78,7 +78,7 @@ class Board {
         const infoStr    = info.replaceAll('"', '');
         let boardInfo    = infoStr.split('>')[1];
 
-        /* Handle double dash (--) */
+        /* Handle double dash (--) (some language has words like "sub-divide") */
         boardInfo        = boardInfo.replaceAll('--', '*-');
         boardInfo        = boardInfo.replaceAll('-', ',');
         boardInfo        = boardInfo.replaceAll('*', '-');
