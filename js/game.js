@@ -106,13 +106,14 @@ class Board {
         }
 
         if (rowCount != this.pressedRow.length && colCount != this.pressedCol.length) {
-            return "USE ALL ROW/COL TILES";
+            return "USE ALL TILES IN A ROW/COL";
         }
 
+        var upperWord = this.word.toUpperCase();
 
         /* Check word in DB */
-        if (this.wordSet.has(this.word) == false) {
-            return "NOT IN WORD LIST";
+        if (this.wordSet.has(upperWord) == false) {
+            return "WORD NOT FOUND";
         }
 
 //        this.wordClear();
