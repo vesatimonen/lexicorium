@@ -127,7 +127,8 @@ class Board {
             return;
         }
 
-        this.statusClear();
+        this.status = "WORD FOUND";
+//        this.statusClear();
         this.wordClear();
     }
 
