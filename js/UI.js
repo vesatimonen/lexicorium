@@ -16,8 +16,8 @@ function uiBoardCellSize() {
 /*****************************************************************************
  * Redraw buttons
  *****************************************************************************/
-function uiButtonsRedraw(game) {
-    if (game.wordExists()) {
+function uiButtonsRedraw(board) {
+    if (board.wordExists()) {
         elements.buttonEnter.disabled = false;
         elements.buttonClear.disabled = false;
     } else {
@@ -128,7 +128,7 @@ function uiRedraw() {
     uiInfoRedraw(globals.game);
 
     /* Redraw buttons */
-    uiButtonsRedraw(globals.game);
+    uiButtonsRedraw(globals.game.board);
 
     /* Check if end of level */
     if (globals.game.board.solved()) {

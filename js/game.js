@@ -75,6 +75,30 @@ class Board {
         return false;
     }
 
+    wordAddFragment(X, Y) {
+        /* Check path legality */
+        if (this.board.keyIsEnabled(X, Y) == true) {
+            return;
+        }
+        let word = "";
+        word = word + this.board.fragments[X][Y];
+        word = word.toUpperCase();
+    }
+
+    wordClear() {
+    }
+
+    wordEnter() {
+        /* Check word legality */
+        if (this.board.wordSet.has(word) == false) {
+            return;
+        }
+    }
+
+    wordExists() {
+        return true;
+    }
+
     /* Initialize game */
     async init(info) {
         /* Parse board configuration (verborum) */
@@ -132,30 +156,6 @@ class Game {
 
         /* Set level */
         this.level = level;
-    }
-
-    wordAddFragment(X, Y) {
-        /* Check path legality */
-        if (this.board.keyIsEnabled(X, Y) == true) {
-            return;
-        }
-        let word = "";
-        word = word + this.board.fragments[X][Y];
-        word = word.toUpperCase();
-    }
-
-    wordClear() {
-    }
-
-    wordEnter() {
-        /* Check word legality */
-        if (this.board.wordSet.has(word) == false) {
-            return;
-        }
-    }
-
-    wordExists() {
-        return true;
     }
 }
 
