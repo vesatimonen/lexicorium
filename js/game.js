@@ -36,15 +36,6 @@ class Board {
         this.cells = [[undefined]];
     }
 
-    filledCount() {
-        let count = 0;
-        for (let i = 0; i < this.paths.length; i++) {
-            count += this.paths[i].length;
-        }
-
-        return count;
-    }
-
     keyIsEnabled(x, y) {
         if (x < 0 || y < 0 || x >= this.width || y >= this.height) {
             return false;
@@ -107,10 +98,6 @@ class Board {
     }
 
     solved() {
-        if (this.filledCount() == this.width * this.height) {
-            return true;
-        }
-
         return false;
     }
 
