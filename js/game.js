@@ -91,7 +91,6 @@ class Board {
     wordEnter() {
         /* Check word legality */
         if (this.wordSet.has(this.word) == false) {
-            return;
         }
 
         this.word = "";
