@@ -79,7 +79,7 @@ function uiBoardRedraw(board) {
 
     /* Mark solved rows */
     boardContext.strokeStyle = enabledColor;
-    boardContext.lineWidth   = borderWidth;
+    boardContext.lineWidth   = 4.0;
     boardContext.lineCap     = "round";
     for (let row = 0; row < board.height; row++) {
         if (board.solvedRow[row] == true || true) {
@@ -87,10 +87,12 @@ function uiBoardRedraw(board) {
             const rightX  = cellSize * board.width;
             const middleY = cellSize * row + cellSize / 2;
             boardContext.beginPath();
-            boardContext.arc(leftX, middleY, 10, 0, Math.PI * 2); // x, y, radius, startAngle, endAngle
+            boardContext.moveTo(leftX, middleY);
+            boardContext.lineTo(leftX + 10, middleY);
             boardContext.stroke();
             boardContext.beginPath();
-            boardContext.arc(rightX, middleY, 10, 0, Math.PI * 2); // x, y, radius, startAngle, endAngle
+            boardContext.moveTo(rightX, middleY);
+            boardContext.lineTo(rightX - 10, middleY);
             boardContext.stroke();
         }
     }
