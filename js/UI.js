@@ -65,7 +65,7 @@ function uiBoardRedraw(board) {
     elements.board.style.width  = boardWidth  + "px";
     elements.board.style.height = boardHeight + "px";
     elements.board.style.left   = elements.screen.clientWidth / 2
-                                - cellSize * (board.width / 2)
+                                - (boardMargin + cellSize * (board.width / 2))
                                 + "px";
 
     /* Set canvas size and clear it */
