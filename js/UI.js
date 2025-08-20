@@ -77,6 +77,28 @@ function uiBoardRedraw(board) {
     const enabledColor  = "#202020";
     const disabledColor = "#20202080";
 
+    /* Mark solved rows */
+    boardContext.strokeStyle = enabledColor;
+    boardContext.lineWidth   = borderWidth;
+    boardContext.lineCap     = "round";
+    for (let row = 0; row < board.height; row++) {
+        if (board.solvedRow[row] == true || true) {
+            const leftX   = cellSize * 0;
+            const rightX  = cellSize * board.width;
+            const middleY = cellSize * row + cellSize / 2;
+            boardContext.beginPath();
+            boardContext.arc(leftX, middleY, 10, 0, Math.PI * 2); // x, y, radius, startAngle, endAngle
+            boardContext.stroke();
+            boardContext.beginPath();
+            boardContext.arc(rightX, middleY, 10, 0, Math.PI * 2); // x, y, radius, startAngle, endAngle
+            boardContext.stroke();
+        }
+    }
+    for (let col = 0; col < board.width; col++) {
+        if (board.solvedCol[col] == true) {
+        }
+    }
+
     /* Redraw cell content */
     for (y = 0; y < board.height; y++) {
         for (x = 0; x < board.width; x++) {
