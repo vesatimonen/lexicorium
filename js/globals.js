@@ -6,7 +6,7 @@ var globals = {
     storage:      undefined,
 
     boardMaxSize: 6,
-    boardMargin:  20,
+    boardMargin:  15,
 
     uiKeyPressed: undefined,
 };

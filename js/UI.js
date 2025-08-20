@@ -82,10 +82,10 @@ function uiBoardRedraw(board) {
     const disabledColor = "#20202080";
 
     /* Mark solved rows */
-    const markLength = 10;
-    const markMargin = 5;
+    const markLength = 8;
+    const markMargin = 4;
     boardContext.strokeStyle = enabledColor;
-    boardContext.lineWidth   = 7.0;
+    boardContext.lineWidth   = 6.0;
     boardContext.lineCap     = "round";
     boardContext.lineJoin    = "round";
     for (let row = 0; row < board.height; row++) {

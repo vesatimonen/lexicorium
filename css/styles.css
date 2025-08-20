@@ -35,9 +35,9 @@
 
 #game-title {
     margin-top:     3mm;
-    margin-bottom:  6mm;
+    margin-bottom:  2mm;
 
-    font-size:      12mm;
+    font-size:      10mm;
     font-weight:    bold;
 
     text-align:     center;
@@ -58,7 +58,7 @@
 
 #word-controls {
     margin-top:     0mm;
-    margin-bottom:  4mm;
+    margin-bottom:  0mm;
 
     display:        flex;
 }
@@ -85,7 +85,7 @@
 
 #game-board {
     margin-top:     0mm;
-    margin-bottom:  4mm;
+    margin-bottom:  3mm;
 
     position:       relative;
 
@@ -174,9 +174,9 @@
 
 #game-info {
     margin-top:     0mm;
-    margin-bottom:  4mm;
+    margin-bottom:  5mm;
 
-    font-size:      9mm;
+    font-size:      7mm;
     font-weight:    bold;
     text-align:     center;
 }
@@ -186,7 +186,7 @@
     margin-top:     0mm;
     margin-bottom:  2mm;
 
-    font-size:      5mm;
+    font-size:      4mm;
     text-align:     center;
 }
 
