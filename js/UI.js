@@ -90,7 +90,7 @@ function uiBoardRedraw(board) {
     boardContext.lineCap     = "round";
     boardContext.lineJoin    = "round";
     for (let row = 0; row < board.height; row++) {
-        if (board.solvedRow[row] == true || true) {
+        if (board.solvedRow[row] == true) {
             const leftX   = boardMargin - markMargin + cellSize * 0;
             const rightX  = boardMargin + markMargin + cellSize * board.width;
             const middleY = boardMargin + cellSize * row + cellSize / 2;
@@ -107,7 +107,7 @@ function uiBoardRedraw(board) {
         }
     }
     for (let col = 0; col < board.width; col++) {
-        if (board.solvedCol[col] == true || true) {
+        if (board.solvedCol[col] == true) {
             const middleX = boardMargin + cellSize * col + cellSize / 2;
             const topY    = boardMargin - markMargin + cellSize * 0;
             const bottomY = boardMargin + markMargin + cellSize * board.height;
