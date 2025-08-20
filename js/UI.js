@@ -57,15 +57,14 @@ function uiBoardRedraw(board) {
     const cellSize = uiBoardCellSize();
 
     /* Board size */
-    const boardMargin = 20;
-    const boardWidth  = boardMargin + cellSize * board.width  + boardMargin;
-    const boardHeight = boardMargin + cellSize * board.height + boardMargin;
+    const boardWidth  = globals.boardMargin + cellSize * board.width  + globals.boardMargin;
+    const boardHeight = globals.boardMargin + cellSize * board.height + globals.boardMargin;
 
     /* Center the board */
     elements.board.style.width  = boardWidth  + "px";
     elements.board.style.height = boardHeight + "px";
     elements.board.style.left   = elements.screen.clientWidth / 2
-                                - (boardMargin + cellSize * (board.width / 2))
+                                - (globals.boardMargin + cellSize * (board.width / 2))
                                 + "px";
 
     /* Set canvas size and clear it */
@@ -91,9 +90,9 @@ function uiBoardRedraw(board) {
     boardContext.lineJoin    = "round";
     for (let row = 0; row < board.height; row++) {
         if (board.solvedRow[row] == true) {
-            const leftX   = boardMargin - markMargin + cellSize * 0;
-            const rightX  = boardMargin + markMargin + cellSize * board.width;
-            const middleY = boardMargin + cellSize * row + cellSize / 2;
+            const leftX   = globals.boardMargin - markMargin + cellSize * 0;
+            const rightX  = globals.boardMargin + markMargin + cellSize * board.width;
+            const middleY = globals.boardMargin + cellSize * row + cellSize / 2;
             boardContext.beginPath();
             boardContext.moveTo(leftX - markLength, middleY - markLength);
             boardContext.lineTo(leftX,              middleY);
@@ -108,9 +107,9 @@ function uiBoardRedraw(board) {
     }
     for (let col = 0; col < board.width; col++) {
         if (board.solvedCol[col] == true) {
-            const middleX = boardMargin + cellSize * col + cellSize / 2;
-            const topY    = boardMargin - markMargin + cellSize * 0;
-            const bottomY = boardMargin + markMargin + cellSize * board.height;
+            const middleX = globals.boardMargin + cellSize * col + cellSize / 2;
+            const topY    = globals.boardMargin - markMargin + cellSize * 0;
+            const bottomY = globals.boardMargin + markMargin + cellSize * board.height;
             boardContext.beginPath();
             boardContext.moveTo(middleX - markLength, topY - markLength);
             boardContext.lineTo(middleX,              topY);
@@ -127,8 +126,8 @@ function uiBoardRedraw(board) {
     /* Redraw cell content */
     for (y = 0; y < board.height; y++) {
         for (x = 0; x < board.width; x++) {
-            const startX  = boardMargin + cellSize * x;
-            const startY  = boardMargin + cellSize * y;
+            const startX  = globals.boardMargin + cellSize * x;
+            const startY  = globals.boardMargin + cellSize * y;
             const middleX = startX + cellSize / 2;
             const middleY = startY + cellSize / 2;
 

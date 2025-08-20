@@ -88,7 +88,20 @@ class Board {
     }
 
     solved() {
-        return false;
+        /* Check solved lines */
+        for (let row = 0; row < this.pressedRow.length; row++) {
+            if (this.pressedRow[row] == false) {
+                return false;
+            }
+        }
+        for (let col = 0; col < this.pressedCol.length; col++) {
+            if (this.pressedCol[col] == false) {
+                return false;
+            }
+        }
+
+
+        return true;
     }
 
     wordClear() {
