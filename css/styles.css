@@ -61,16 +61,18 @@
     margin-bottom:  0mm;
 
     display:         flex;
-    justify-content: flex-end;
-    overflow:        hidden;
 }
 #word-info {
-    line-height:    12mm; /* Same as button to center */
+    display:        flex;
+
+    line-height:    12mm;
     font-size:      8mm;
     font-weight:    bold;
     text-align:     center;
-
     margin:         auto;
+
+    justify-content:flex-end; /* align text to the right */
+    overflow-x:     auto;     /* enable horizontal scrolling */
 }
 
 .cursor {
@@ -142,6 +144,7 @@
     display:         flex;
     justify-content: center; /* horizontal centering */
     align-items:     center; /* vertical centering */
+    flex-shrink: 0;
 
     /* Appearance */
     color:          #000000;
