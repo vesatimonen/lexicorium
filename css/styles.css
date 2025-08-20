@@ -64,11 +64,6 @@
     justify-content: flex-end;
     overflow:        hidden;
 }
-#word-controls:after {
-    content:        "";
-    clear:          both;
-    display:        block;
-}
 #word-info {
     line-height:    12mm; /* Same as button to center */
     font-size:      8mm;
