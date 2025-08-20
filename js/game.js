@@ -205,9 +205,8 @@ class Board {
         if (language == "FIN") {
             elements.instructions.innerHTML = "Etsi jokaiselle riville ja sarakkeelle sana, joka käyttää vähintään kerran kaikkia sen rivin/sarakkeen ruutuja.";
         }
-        if (language =="SWE") {
-            elements.instructions.innerHTML = "Bilda svenska ord i grundform genom att förena orddelar med varandra vågrätt och/eller lodrätt. "
-            + "Varje stavelse ska användas exakt en gång.";
+        if (language == "ENG") {
+            elements.instructions.innerHTML = "Find a word for each row and column so that all word tiles on that row/column are used at least once.";
         }
 
         /* Read word database to set structure */
