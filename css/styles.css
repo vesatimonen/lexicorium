@@ -63,7 +63,7 @@
     display:         flex;
 }
 #word-info {
-    max-width:      calc(100% - 34mm);
+    max-width:      calc(100% - 26mm);
 
     display:        flex;
 
