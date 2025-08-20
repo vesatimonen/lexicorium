@@ -56,13 +56,19 @@ function uiBoardRedraw(board) {
     /* Get board cell size */
     const cellSize = uiBoardCellSize();
 
+    /* Board size */
+    const boardWidth  = cellSize * board.width;
+    const boardHeight = cellSize * board.height;
+
     /* Center the board */
-    elements.board.style.width  = cellSize * board.width + "px";
-    elements.board.style.height = cellSize * board.height + "px";
+console.log(cellSize);
+    elements.board.style.width  = boardWidth + "px";
+    elements.board.style.height = boardHeight + "px";
     elements.board.style.left   = elements.screen.clientWidth / 2
                                 - cellSize * (board.width / 2)
                                 + "px";
 
+console.log(cellSize);
     /* Set canvas size and clear it */
     const pixelRatio = 2.0;
     elements.canvas.width  = cellSize * board.width * pixelRatio;
@@ -70,6 +76,7 @@ function uiBoardRedraw(board) {
     boardContext.scale(pixelRatio, pixelRatio);
     boardContext.clearRect(0, 0, elements.canvas.width, elements.canvas.height);
 
+console.log(cellSize);
     /* Define board elements sizes */
     const textRatio   = 0.42;
     const boxRatio    = 0.90;
@@ -87,12 +94,12 @@ function uiBoardRedraw(board) {
             const rightX  = cellSize * board.width;
             const middleY = cellSize * row + cellSize / 2;
             boardContext.beginPath();
-            boardContext.moveTo(leftX, middleY);
-            boardContext.lineTo(leftX + 10, middleY);
+            boardContext.moveTo(leftX - 100, middleY);
+            boardContext.lineTo(leftX + 100, middleY);
             boardContext.stroke();
             boardContext.beginPath();
-            boardContext.moveTo(rightX, middleY);
-            boardContext.lineTo(rightX - 10, middleY);
+            boardContext.moveTo(rightX + 100, middleY);
+            boardContext.lineTo(rightX - 100, middleY);
             boardContext.stroke();
         }
     }
