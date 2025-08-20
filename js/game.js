@@ -89,17 +89,16 @@ class Board {
 
     solved() {
         /* Check solved lines */
-        for (let row = 0; row < this.pressedRow.length; row++) {
-            if (this.pressedRow[row] == false) {
+        for (let row = 0; row < this.solvedRow.length; row++) {
+            if (this.solvedRow[row] != true) {
                 return false;
             }
         }
-        for (let col = 0; col < this.pressedCol.length; col++) {
-            if (this.pressedCol[col] == false) {
+        for (let col = 0; col < this.solvedCol.length; col++) {
+            if (this.solvedCol[col] != true) {
                 return false;
             }
         }
-
 
         return true;
     }
@@ -198,8 +197,8 @@ class Board {
 
         this.solvedRow = Array(this.height);
         this.solvedCol = Array(this.width);
-        this.pressedRow.fill(false);
-        this.pressedCol.fill(false);
+        this.solvedRow.fill(false);
+        this.solvedCol.fill(false);
 
         /* Show instructions */
         const language = this.dbName.slice(0, 3);
