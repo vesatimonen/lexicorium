@@ -38,6 +38,10 @@ class Board {
         /* Pressed keys */
         this.pressedRow = [undefined];
         this.pressedCol = [undefined];
+
+        /* Solved lines */
+        this.solvedRow = [undefined];
+        this.solvedCol = [undefined];
     }
 
     keyIsEnabled(x, y) {
@@ -127,8 +131,7 @@ class Board {
             return;
         }
 
-        this.status = "";
-//        this.statusClear();
+        this.statusClear();
         this.wordClear();
     }
 
