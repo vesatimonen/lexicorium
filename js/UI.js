@@ -62,7 +62,7 @@ function uiBoardRedraw(board) {
 
     /* Center the board */
 console.log(cellSize);
-    elements.board.style.width  = boardWidth + "px";
+    elements.board.style.width  = boardWidth  + "px";
     elements.board.style.height = boardHeight + "px";
     elements.board.style.left   = elements.screen.clientWidth / 2
                                 - cellSize * (board.width / 2)
@@ -71,8 +71,8 @@ console.log(cellSize);
 console.log(cellSize);
     /* Set canvas size and clear it */
     const pixelRatio = 2.0;
-    elements.canvas.width  = cellSize * board.width * pixelRatio;
-    elements.canvas.height = cellSize * board.height * pixelRatio;
+    elements.canvas.width  = boardWidth  * pixelRatio;
+    elements.canvas.height = boardHeight * pixelRatio;
     boardContext.scale(pixelRatio, pixelRatio);
     boardContext.clearRect(0, 0, elements.canvas.width, elements.canvas.height);
 
