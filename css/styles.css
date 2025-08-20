@@ -145,7 +145,7 @@
 
     /* Appearance */
     color:          #000000;
-    background:     #67BFEC;
+    background:     #B0DDFF;
     border:         2px solid #202020;
     border-radius:  10px;
     outline:        0;
@@ -164,7 +164,7 @@
 
 .button:active:enabled {
 /*    box-shadow:         none; */
-    background:     #B0DDFF;
+    background:     #67BFEC;
 }
 
 .button:disabled {
