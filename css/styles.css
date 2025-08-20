@@ -63,6 +63,8 @@
     display:         flex;
 }
 #word-info {
+    max-width:      calc(100% - 34mm);
+
     display:        flex;
 
     line-height:    12mm;
