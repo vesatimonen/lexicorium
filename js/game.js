@@ -77,7 +77,7 @@ class Board {
             return;
         }
 
-        if (this.word.length > 20) {
+        if (this.word.length + this.fragments[X][Y].length > 20) {
             return;
         }
 
