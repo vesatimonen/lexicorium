@@ -17,10 +17,14 @@ function uiBoardCellSize() {
  * Redraw buttons
  *****************************************************************************/
 function uiButtonsRedraw(board) {
+//    buttonEnter:    document.getElementById("word-enter"),
+
+
     if (board.wordLength() > 0) {
         elements.buttonEnter.disabled = false;
         elements.buttonClear.disabled = false;
     } else {
+//    elements.buttonClear.style.height = "50px";
         elements.buttonEnter.disabled = true;
         elements.buttonClear.disabled = true;
     }
@@ -76,7 +80,7 @@ function uiBoardRedraw(board) {
 
     /* Define board elements sizes */
     const textRatio   = 0.42;
-    const boxRatio    = 0.90;
+    const tileSize    = 0.90 * cellSize;
     const borderWidth = 2.0;
     const enabledColor  = "#202020";
     const disabledColor = "#20202080";
@@ -139,7 +143,7 @@ function uiBoardRedraw(board) {
 
             /* Cell borders */
             boardContext.beginPath();
-            const boxMargin = (cellSize - boxRatio * cellSize) / 2.0;
+            const boxMargin = (cellSize - tileSize) / 2.0;
 //            const boxMargin = 0;
             boardContext.roundRect(startX + boxMargin, startY + boxMargin,
                                    cellSize - 2 * boxMargin, cellSize - 2 * boxMargin,
