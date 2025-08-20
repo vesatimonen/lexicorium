@@ -2,7 +2,7 @@
  * Button handlers
  *****************************************************************************/
 
-function uiClear(event) {
+function uiClear() {
     globals.game.board.wordClear();
 
     /* Redraw UI */
@@ -10,7 +10,7 @@ function uiClear(event) {
     return false;
 }
 
-function uiEnter(event) {
+function uiEnter() {
     globals.game.board.wordEnter();
 
     /* Redraw UI */
@@ -29,6 +29,16 @@ function uiEnter(event) {
 }
 
 
+function uiKeyboard(event) {
+    if (event.key === 'Enter') {
+        uiEnter();
+    }
+    if (event.key === 'Escape') {
+        uiClear();
+    }
+}
+
+
 /*****************************************************************************
  * Register button event handlers
  *****************************************************************************/
@@ -41,4 +51,6 @@ function preventZoom(event) {
 }
 
 elements.screen.addEventListener("click", preventZoom);
+
+document.addEventListener('keydown', uiKeyboard);
 
