@@ -57,7 +57,7 @@ function uiBoardRedraw(board) {
     const cellSize = uiBoardCellSize();
 
     /* Board size */
-    const boardMargin = 50;
+    const boardMargin = 20;
     const boardWidth  = boardMargin + cellSize * board.width  + boardMargin;
     const boardHeight = boardMargin + cellSize * board.height + boardMargin;
 
@@ -87,21 +87,25 @@ console.log(elements.canvas.width);
     const disabledColor = "#20202080";
 
     /* Mark solved rows */
+    const markLength = 10;
+    const markMargin = 5;
     boardContext.strokeStyle = enabledColor;
-    boardContext.lineWidth   = 4.0;
+    boardContext.lineWidth   = 7.0;
     boardContext.lineCap     = "round";
+    boardContext.lineJoin    = "round";
     for (let row = 0; row < board.height; row++) {
         if (board.solvedRow[row] == true || true) {
-            const leftX   = boardMargin + cellSize * 0;
-            const rightX  = boardMargin + cellSize * board.width;
+            const leftX   = boardMargin - markMargin + cellSize * 0;
+            const rightX  = boardMargin + markMargin + cellSize * board.width;
             const middleY = boardMargin + cellSize * row + cellSize / 2;
             boardContext.beginPath();
-            boardContext.moveTo(leftX - 100, middleY);
-            boardContext.lineTo(leftX + 100, middleY);
+            boardContext.moveTo(leftX - markLength, middleY - markLength);
+            boardContext.lineTo(leftX,              middleY);
+            boardContext.lineTo(leftX - markLength, middleY + markLength);
             boardContext.stroke();
             boardContext.beginPath();
-            boardContext.moveTo(rightX + 100, middleY);
-            boardContext.lineTo(rightX - 100, middleY);
+            boardContext.moveTo(rightX + 10, middleY);
+            boardContext.lineTo(rightX - 10, middleY);
             boardContext.stroke();
         }
     }
