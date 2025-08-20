@@ -173,6 +173,13 @@ function uiBoardRedraw(board) {
 }
 
 
+function restartCursorAnimation() {
+    const cursor = document.querySelector('.cursor');
+    cursor.style.animation = 'none';           // temporarily disable
+    cursor.offsetHeight;                       // force reflow (important!)
+    cursor.style.animation = '';               // restore to CSS value
+}
+
 
 /*****************************************************************************
  * Redraw UI
@@ -184,6 +191,8 @@ function uiRedraw() {
     uiBoardRedraw(globals.game.board);
     uiInfoRedraw(globals.game);
     uiButtonsRedraw(globals.game.board);
+
+    restartCursorAnimation();
 }
 
 
