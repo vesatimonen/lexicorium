@@ -150,12 +150,12 @@ class Board {
         boardInfo        = boardInfo.replaceAll('-', ',');
         boardInfo        = boardInfo.replaceAll('*', '-');
 
-        let infoValues   = boardInfo.split(',');
+        let infoValues  = boardInfo.split(',');
 
+        /* Initialize board (size, database and fragments) */
         this.width      = parseInt(infoValues[0].substr(0,1));
         this.height     = parseInt(infoValues[0].substr(2,1));
         this.dbName     = infoValues[1];
-
         this.fragments  = array2D(this.width, this.height);
         for (let x = 0; x < this.width; x++) {
             for (let y = 0; y < this.height; y++) {
@@ -163,12 +163,21 @@ class Board {
             }
         }
 
+        /* Initialize progress variables */
+        this.status = "";
+        this.word = "";
+
         this.pressedRow = Array(this.height);
         this.pressedCol = Array(this.width);
         this.pressedRow.fill(false);
         this.pressedCol.fill(false);
 
-        /* Set title */
+        this.solvedRow = Array(this.height);
+        this.solvedCol = Array(this.width);
+        this.pressedRow.fill(false);
+        this.pressedCol.fill(false);
+
+        /* Show instructions */
         const language = this.dbName.slice(0, 3);
         if (language == "FIN") {
             elements.instructions.innerHTML = "Etsi jokaiselle riville ja sarakkeelle sana, joka käyttää vähintään kerran kaikkia sen rivin/sarakkeen ruutuja.";
