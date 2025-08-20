@@ -15,6 +15,16 @@ function uiEnter(event) {
 
     /* Redraw UI */
     uiRedraw();
+
+    /* Check if end of level */
+    if (globals.game.board.solved()) {
+        /* Start animation */
+        elements.board.addEventListener("animationend", uiAnimationEnd);
+        elements.board.style.animation = "none";
+        elements.board.offsetHeight; /* trigger reflow */
+        elements.board.style.animation = "image-appear 0.5s ease-in 0.2s 1 reverse";
+    }
+
     return false;
 }
 
