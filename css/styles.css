@@ -68,6 +68,7 @@
     display:        block;
 }
 #word-info {
+    line-height:    12mm; /* Same as button to center */
     font-size:      8mm;
     font-weight:    bold;
     text-align:     center;
@@ -158,7 +159,6 @@
     /* Text */
     font-size:      6mm;
     text-align:     center;
-
 /*    box-shadow:         3px 3px 5px rgb(0,0,0); */
 }
 
