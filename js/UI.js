@@ -75,10 +75,6 @@ function uiBoardRedraw(board) {
     boardContext.scale(pixelRatio, pixelRatio);
     boardContext.clearRect(0, 0, elements.canvas.width, elements.canvas.height);
 
-console.log(elements.screen.clientWidth);
-console.log(elements.board.style.width);
-console.log(elements.canvas.width);
-
     /* Define board elements sizes */
     const textRatio   = 0.42;
     const boxRatio    = 0.90;
@@ -104,8 +100,9 @@ console.log(elements.canvas.width);
             boardContext.lineTo(leftX - markLength, middleY + markLength);
             boardContext.stroke();
             boardContext.beginPath();
-            boardContext.moveTo(rightX + 10, middleY);
-            boardContext.lineTo(rightX - 10, middleY);
+            boardContext.moveTo(rightX + markLength, middleY - markLength);
+            boardContext.lineTo(rightX,              middleY);
+            boardContext.lineTo(rightX + markLength, middleY + markLength);
             boardContext.stroke();
         }
     }
