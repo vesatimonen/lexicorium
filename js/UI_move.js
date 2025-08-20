@@ -100,6 +100,7 @@ function uiKeyUp(board)
 function uiMouseDown(event) {
     event.preventDefault();
     uiKeyDown(globals.game.board);
+    event.stopPropagation();
     return false;
 }
 
