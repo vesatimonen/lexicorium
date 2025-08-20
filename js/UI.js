@@ -1,9 +1,8 @@
 
 // Get these from CSS
 const usedColor       = "#67BFEC";
-const backgroundColor = "#B0DDFF";
 
-
+const tileRatio   = 0.90;
 
 /*****************************************************************************
  * Calculate board cell size
@@ -17,9 +16,6 @@ function uiBoardCellSize() {
  * Redraw buttons
  *****************************************************************************/
 function uiButtonsRedraw(board) {
-//    buttonEnter:    document.getElementById("word-enter"),
-
-
     if (board.wordLength() > 0) {
         elements.buttonEnter.disabled = false;
         elements.buttonClear.disabled = false;
@@ -80,7 +76,7 @@ function uiBoardRedraw(board) {
 
     /* Define board elements sizes */
     const textRatio   = 0.42;
-    const tileSize    = 0.90 * cellSize;
+    const tileSize    = tileRatio * cellSize;
     const borderWidth = 2.0;
     const enabledColor  = "#202020";
     const disabledColor = "#20202080";

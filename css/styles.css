@@ -68,7 +68,7 @@
     display:        block;
 }
 #word-info {
-    font-size:      9mm;
+    font-size:      8mm;
     font-weight:    bold;
     text-align:     center;
 
@@ -151,8 +151,8 @@
     outline:        0;
 
     /* Size */
-    width:          16mm;
-    height:         16mm;
+    width:          12mm;
+    height:         12mm;
     padding:        0;
 
     /* Text */
