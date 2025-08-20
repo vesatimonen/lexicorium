@@ -57,18 +57,17 @@ function uiBoardRedraw(board) {
     const cellSize = uiBoardCellSize();
 
     /* Board size */
-    const boardWidth  = cellSize * board.width;
-    const boardHeight = cellSize * board.height;
+    const boardMargin = 50;
+    const boardWidth  = boardMargin + cellSize * board.width  + boardMargin;
+    const boardHeight = boardMargin + cellSize * board.height + boardMargin;
 
     /* Center the board */
-console.log(cellSize);
     elements.board.style.width  = boardWidth  + "px";
     elements.board.style.height = boardHeight + "px";
     elements.board.style.left   = elements.screen.clientWidth / 2
                                 - cellSize * (board.width / 2)
                                 + "px";
 
-console.log(cellSize);
     /* Set canvas size and clear it */
     const pixelRatio = 2.0;
     elements.canvas.width  = boardWidth  * pixelRatio;
@@ -76,7 +75,10 @@ console.log(cellSize);
     boardContext.scale(pixelRatio, pixelRatio);
     boardContext.clearRect(0, 0, elements.canvas.width, elements.canvas.height);
 
-console.log(cellSize);
+console.log(elements.screen.clientWidth);
+console.log(elements.board.style.width);
+console.log(elements.canvas.width);
+
     /* Define board elements sizes */
     const textRatio   = 0.42;
     const boxRatio    = 0.90;
@@ -90,9 +92,9 @@ console.log(cellSize);
     boardContext.lineCap     = "round";
     for (let row = 0; row < board.height; row++) {
         if (board.solvedRow[row] == true || true) {
-            const leftX   = cellSize * 0;
-            const rightX  = cellSize * board.width;
-            const middleY = cellSize * row + cellSize / 2;
+            const leftX   = boardMargin + cellSize * 0;
+            const rightX  = boardMargin + cellSize * board.width;
+            const middleY = boardMargin + cellSize * row + cellSize / 2;
             boardContext.beginPath();
             boardContext.moveTo(leftX - 100, middleY);
             boardContext.lineTo(leftX + 100, middleY);
@@ -111,10 +113,10 @@ console.log(cellSize);
     /* Redraw cell content */
     for (y = 0; y < board.height; y++) {
         for (x = 0; x < board.width; x++) {
-            const middleX = cellSize * x + cellSize / 2;
-            const middleY = cellSize * y + cellSize / 2;
-            const startX = cellSize * x;
-            const startY = cellSize * y;
+            const startX  = boardMargin + cellSize * x;
+            const startY  = boardMargin + cellSize * y;
+            const middleX = startX + cellSize / 2;
+            const middleY = startY + cellSize / 2;
 
             /* Define color */
             var color = enabledColor;
