@@ -37,6 +37,7 @@ class Board {
 
         /* Pressed keys */
         this.pressedRow = [undefined];
+        this.pressedCol = [undefined];
 
         /* Solved lines */
         this.solvedRow = [undefined];
@@ -48,14 +49,21 @@ class Board {
             return false;
         }
 
-        let colCount = 0;
+        var rowCount = 0;
         for (let row = 0; row < this.pressedRow.length; row++) {
             if (this.pressedRow[row] == true || y == row) {
+                rowCount++;
+            }
+        }
+        var colCount = 0;
+        for (let col = 0; col < this.pressedCol.length; col++) {
+            if (this.pressedCol[col] == true || x == col) {
                 colCount++;
             }
         }
 
-        if (colCount > 1) {
+        if (rowCount > 1 && colCount > 1) {
+            // Not possible
             return false;
         }
 
@@ -76,6 +84,7 @@ class Board {
         this.word = this.word + this.fragments[X][Y];
 
         this.pressedRow[Y] = true;
+        this.pressedCol[X] = true;
     }
 
     solved() {
@@ -97,6 +106,7 @@ class Board {
     wordClear() {
         this.word = "";
         this.pressedRow.fill(false);
+        this.pressedCol.fill(false);
     }
 
     statusClear() {
@@ -114,7 +124,15 @@ class Board {
                 rowIndex = row;
             }
         }
-        if (rowCount != this.pressedRow.length) {
+        var colCount = 0;
+        var colIndex = 0;
+        for (let col = 0; col < this.pressedCol.length; col++) {
+            if (this.pressedCol[col] == true) {
+                colCount++;
+                colIndex = col;
+            }
+        }
+        if (rowCount != this.pressedRow.length && colCount != this.pressedCol.length) {
             this.status = "USE ALL TILES IN A ROW/COL";
             this.wordClear();
             return;
@@ -172,6 +190,7 @@ class Board {
             for (let fragment = 0; fragment < fragments.length; fragment++) {
                 this.fragments[fragment][word] = fragments[fragment];
             }
+            console.log(fragments);
 
             word++;
         }
@@ -181,7 +200,9 @@ class Board {
         this.word = "";
 
         this.pressedRow = Array(this.height);
+        this.pressedCol = Array(this.width);
         this.pressedRow.fill(false);
+        this.pressedCol.fill(false);
 
         this.solvedRow = Array(this.height);
         this.solvedCol = Array(this.width);
