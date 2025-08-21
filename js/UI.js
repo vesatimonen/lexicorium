@@ -105,23 +105,6 @@ function uiBoardRedraw(board) {
             boardContext.stroke();
         }
     }
-    for (let col = 0; col < board.width; col++) {
-        if (board.solvedCol[col] == true) {
-            const middleX = globals.boardMargin + cellSize * col + cellSize / 2;
-            const topY    = globals.boardMargin - markMargin + cellSize * 0;
-            const bottomY = globals.boardMargin + markMargin + cellSize * board.height;
-            boardContext.beginPath();
-            boardContext.moveTo(middleX - markLength, topY - markLength);
-            boardContext.lineTo(middleX,              topY);
-            boardContext.lineTo(middleX + markLength, topY - markLength);
-            boardContext.stroke();
-            boardContext.beginPath();
-            boardContext.moveTo(middleX - markLength, bottomY + markLength);
-            boardContext.lineTo(middleX,              bottomY);
-            boardContext.lineTo(middleX + markLength, bottomY + markLength);
-            boardContext.stroke();
-        }
-    }
 
     /* Redraw cell content */
     for (y = 0; y < board.height; y++) {

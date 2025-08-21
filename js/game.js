@@ -41,7 +41,6 @@ class Board {
 
         /* Solved lines */
         this.solvedRow = [undefined];
-        this.solvedCol = [undefined];
     }
 
     keyIsEnabled(x, y) {
@@ -85,11 +84,6 @@ class Board {
         /* Check solved lines */
         for (let row = 0; row < this.solvedRow.length; row++) {
             if (this.solvedRow[row] != true) {
-                return false;
-            }
-        }
-        for (let col = 0; col < this.solvedCol.length; col++) {
-            if (this.solvedCol[col] != true) {
                 return false;
             }
         }
@@ -187,9 +181,7 @@ class Board {
         this.pressedCol.fill(false);
 
         this.solvedRow = Array(this.height);
-        this.solvedCol = Array(this.width);
         this.solvedRow.fill(false);
-        this.solvedCol.fill(false);
 
         /* Show instructions */
         const language = this.dbName.slice(0, 3);
