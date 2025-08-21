@@ -110,26 +110,20 @@ class Board {
 
     wordEnter() {
         /* Check that all tiles are used */
-        var rowCount = 0;
         var rowIndex = 0;
         for (let row = 0; row < this.pressedRow.length; row++) {
             if (this.pressedRow[row] == true) {
-                rowCount++;
                 rowIndex = row;
             }
         }
+
         var colCount = 0;
-        var colIndex = 0;
         for (let col = 0; col < this.pressedCol.length; col++) {
-            if (this.pressedCol[col] == true) {
-                colCount++;
-                colIndex = col;
+            if (this.pressedCol[col] == false && this.fragments[col][rowIndex] != undefined) {
+                this.status = "USE ALL TILES IN A ROW/COL";
+                this.wordClear();
+                return;
             }
-        }
-        if (rowCount != this.pressedRow.length && colCount != this.pressedCol.length) {
-            this.status = "USE ALL TILES IN A ROW/COL";
-            this.wordClear();
-            return;
         }
 
         /* Check word in DB */
@@ -140,13 +134,8 @@ class Board {
             return;
         }
 
-        /* Save progress */
-        if (colCount == 1) {
-            this.solvedCol[colIndex] = true;
-        }
-        if (rowCount == 1) {
-            this.solvedRow[rowIndex] = true;
-        }
+        /* Mark row solved */
+        this.solvedRow[rowIndex] = true;
 
         this.statusClear();
         this.wordClear();
