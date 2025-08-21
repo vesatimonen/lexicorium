@@ -183,17 +183,16 @@ class Board {
 
         /* Go through fragment fields */
         this.fragments = array2D(this.width, this.height);
-    this.fragments[1][1] = "11";
-    this.fragments[0][0] = "00";
-        let wordId = 0;
+
+        let word = 0;
         for (let field = 2; field < fields.length; field += 2) {
             let fragments = fields[field].split('.');
-
+            for (let fragment = 0; fragment < fragments.length; fragment++) {
+                this.fragments[fragment][word] = fragments[fragment];
+            }
             console.log(fragments);
-            console.log(fields[field]);
-            console.log(fields[field + 1]);
 
-            wordId++;
+            word++;
         }
 
         /* Initialize progress variables */

@@ -4,8 +4,8 @@ const strorageName = "lexicorium/game-progress";
  * Game challenges (levels)
  *****************************************************************************/
 const challengeSetFIN = [
-    {info: "INFO: >FIN:4:gvi.ini.pin:201:i.ra.t:2001:as.ra.st:120:ani.fa.sa:120:"},
-    {info: "INFO: >FIN:4:gvi.ini.pin:201:i.ra.t:2001:as.ra.st:120:ani.fa.sa:120:"},
+    {info: "INFO: >FIN:4:gvi.ini.pin:201:i.ra.t:2001:as.ra.st:120:ani.fa.sa:120"},
+    {info: "INFO: >FIN:4:gvi.ini.pin:201:i.ra.t:2001:as.ra.st:120:ani.fa.sa:120"},
 ];
 
 const challengeSetENG = [
