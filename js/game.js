@@ -55,14 +55,8 @@ class Board {
                 rowCount++;
             }
         }
-        var colCount = 0;
-        for (let col = 0; col < this.pressedCol.length; col++) {
-            if (this.pressedCol[col] == true || x == col) {
-                colCount++;
-            }
-        }
 
-        if (rowCount > 1 && colCount > 1) {
+        if (rowCount > 1) {
             // Not possible
             return false;
         }
