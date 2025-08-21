@@ -98,11 +98,6 @@ function uiBoardRedraw(board) {
             boardContext.lineTo(leftX,              middleY);
             boardContext.lineTo(leftX - markLength, middleY + markLength);
             boardContext.stroke();
-            boardContext.beginPath();
-            boardContext.moveTo(rightX + markLength, middleY - markLength);
-            boardContext.lineTo(rightX,              middleY);
-            boardContext.lineTo(rightX + markLength, middleY + markLength);
-            boardContext.stroke();
         }
     }
 
