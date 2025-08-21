@@ -48,6 +48,10 @@ class Board {
             return false;
         }
 
+        if (this.fragments[x][y] == undefined) {
+            return false;
+        }
+
         var rowCount = 0;
         for (let row = 0; row < this.pressedRow.length; row++) {
             if (this.pressedRow[row] == true || y == row) {
