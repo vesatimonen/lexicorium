@@ -4,10 +4,8 @@ const strorageName = "lexicorium/game-progress";
  * Game challenges (levels)
  *****************************************************************************/
 const challengeSetFIN = [
-    {info: "INFO: C3-2-2-1-0 M7-1-0-0-0 S0-0-0-1-4-1-0-2-0-0-0-0-0-0-0-0-0-0-0-0 >4x4-FIN-m-a-ika-n-o-s-i-u-l-ma-nen-i-i-k-a-ho"},
-    {info: "INFO: C1-3-4-0-0 M5-3-0-0-0 S0-0-0-0-3-1-4-0-0-0-0-0-0-0-0-0-0-0-0-0 >4x4-FIN-v-ka-t-a-t-a-it-l-a-s-la-u-k-i-a-o"},
-    {info: "INFO: C2-0-0-2-0 M4-0-0-0-0 S0-0-2-2-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0 >2x2-FIN-taj-u-u-t"},
-    {info: "INFO: C4-0-0-0-0 M4-0-0-0-0 S0-0-0-2-2-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0 >2x2-FIN-t-a-a-te"},
+    {info: "INFO: >FIN:4:gvi.ini.pin:201:i.ra.t:2001:as.ra.st:120:ani.fa.sa:120:"},
+    {info: "INFO: >FIN:4:gvi.ini.pin:201:i.ra.t:2001:as.ra.st:120:ani.fa.sa:120:"},
 ];
 
 const challengeSetENG = [

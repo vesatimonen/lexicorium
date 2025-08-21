@@ -168,22 +168,24 @@ class Board {
         const infoStr    = info.replaceAll('"', '');
         let boardInfo    = infoStr.split('>')[1];
 
-        /* Handle double dash (--) (some language has words like "sub-divide") */
-        boardInfo        = boardInfo.replaceAll('--', '*-');
-        boardInfo        = boardInfo.replaceAll('-', ',');
-        boardInfo        = boardInfo.replaceAll('*', '-');
+        /* Split info into fields */
+        let fields = boardInfo.split(':');
 
-        let infoValues  = boardInfo.split(',');
+        /* Database name */
+        this.dbName = fields[0];
 
-        /* Initialize board (size, database and fragments) */
-        this.width      = parseInt(infoValues[0].substr(0,1));
-        this.height     = parseInt(infoValues[0].substr(2,1));
-        this.dbName     = infoValues[1];
-        this.fragments  = array2D(this.width, this.height);
-        for (let x = 0; x < this.width; x++) {
-            for (let y = 0; y < this.height; y++) {
-                this.fragments[x][y] = infoValues[2 + y * this.width + x];
-            }
+
+        /* Word count */
+        this.height = parseInt(fields[1]);
+
+        /* Max fragments */
+        this.width = 6;
+
+        /* Go through fragment fields */
+        this.fragments = array2D(this.width, this.height);
+        this.fragments[1][1] = "11";
+        this.fragments[0][0] = "00";
+        for (let f = 2; f < fields.length; f++) {
         }
 
         /* Initialize progress variables */

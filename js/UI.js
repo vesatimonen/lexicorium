@@ -126,6 +126,10 @@ function uiBoardRedraw(board) {
     /* Redraw cell content */
     for (y = 0; y < board.height; y++) {
         for (x = 0; x < board.width; x++) {
+            if (board.fragments[x][y] == undefined) {
+                continue;
+            }
+
             const startX  = globals.boardMargin + cellSize * x;
             const startY  = globals.boardMargin + cellSize * y;
             const middleX = startX + cellSize / 2;
