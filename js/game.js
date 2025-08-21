@@ -190,7 +190,6 @@ class Board {
             for (let fragment = 0; fragment < fragments.length; fragment++) {
                 this.fragments[fragment][word] = fragments[fragment];
             }
-            console.log(fragments);
 
             word++;
         }
