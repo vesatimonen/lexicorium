@@ -80,7 +80,7 @@ function uiBoardRedraw(board) {
     const borderWidth = 2.0;
     const enabledColor  = "#202020";
     const disabledColor = "#20202080";
-    const solvedColor   = "#20202000";
+    const solvedColor   = "#20202020";
 
     /* Redraw cell content */
     for (y = 0; y < board.height; y++) {
