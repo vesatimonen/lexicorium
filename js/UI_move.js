@@ -103,9 +103,8 @@ function uiMouseDown(event) {
     event.preventDefault();
     if (globals.game.board.getWordStatus().length > 0) {
         globals.game.board.statusClear();
-    } else {
-        uiKeyDown(globals.game.board);
     }
+    uiKeyDown(globals.game.board);
     event.stopPropagation();
     return false;
 }
