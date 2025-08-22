@@ -72,9 +72,9 @@ function uiBoardRedraw(board) {
     const textRatio   = 0.42;
     const tileSize    = tileRatio * cellSize;
     const borderWidth = 2.0;
-    const enabledColor  = "#202020";
-    const disabledColor = "#20202080";
-    const solvedColor   = "#20202020";
+    const enabledColor  = "#000000";
+    const disabledColor = "#00000080";
+    const solvedColor   = "#00000020";
 
     /* Define board font */
     const fontWeight = "bold";
@@ -147,7 +147,7 @@ function uiBoardRedraw(board) {
         }
     }
 
-//    elements.wordInfo.style.fontSize = "4mm";
+    elements.wordInfo.style.fontSize = fontSize;
     elements.wordInfoText.innerHTML = board.getWordText();
 }
 
