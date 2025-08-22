@@ -152,8 +152,12 @@ class Board {
         }
     }
 
-    getWordTextLength() {
-        return this.wordText.length;
+    getWordStatus() {
+        return this.wordStatus;
+    }
+
+    getWordText() {
+        return this.wordText;
     }
 
     /* Initialize game */

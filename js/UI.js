@@ -16,7 +16,7 @@ function uiBoardCellSize() {
  * Redraw buttons
  *****************************************************************************/
 function uiButtonsRedraw(board) {
-    if (board.getWordTextLength() > 0) {
+    if (board.getWordText().length > 0) {
         elements.buttonEnter.disabled = false;
         elements.buttonClear.disabled = false;
     } else {
@@ -37,14 +37,14 @@ function uiInfoRedraw(game) {
  * Redraw status
  *****************************************************************************/
 function uiStatusRedraw(board) {
-    elements.wordStatus.innerHTML = board.wordStatus;
+    elements.wordStatus.innerHTML = board.getWordStatus();
 }
 
 /*****************************************************************************
  * Redraw word
  *****************************************************************************/
 function uiWordRedraw(board) {
-    elements.wordInfo.innerHTML = board.wordText;
+    elements.wordInfo.innerHTML = board.getWordText();
 }
 
 /*****************************************************************************
