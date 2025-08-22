@@ -76,6 +76,12 @@ function uiBoardRedraw(board) {
     const disabledColor = "#20202080";
     const solvedColor   = "#20202020";
 
+    /* Cell content */
+    const fontWeight = "bold";
+    const fontStyle  = "normal";
+    const fontSize   = (cellSize * textRatio) + "px";
+    const fontFamily = "Courier New";
+
     /* Redraw cell content */
     for (y = 0; y < board.height; y++) {
         for (x = 0; x < board.width; x++) {
@@ -117,12 +123,6 @@ function uiBoardRedraw(board) {
             boardContext.lineCap     = "round";
             boardContext.stroke();
 
-            /* Cell content */
-            const fontWeight = "bold";
-            const fontStyle  = "normal";
-            const fontSize   = (cellSize * textRatio) + "px";
-            const fontFamily = "Courier New";
-
             boardContext.font         = `${fontWeight} ${fontStyle} ${fontSize} ${fontFamily}`;
             boardContext.textBaseline = "middle";
             boardContext.textAlign    = "center";
@@ -132,11 +132,6 @@ function uiBoardRedraw(board) {
     }
 
     /* Word text and solution words*/
-    const fontWeight = "bold";
-    const fontStyle  = "normal";
-    const fontSize   = (cellSize * textRatio) + "px";
-    const fontFamily = "Courier New";
-
     boardContext.font         = `${fontWeight} ${fontStyle} ${fontSize} ${fontFamily}`;
     boardContext.textBaseline = "middle";
     boardContext.textAlign    = "left";
