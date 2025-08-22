@@ -40,7 +40,7 @@ function uiEventPosition(event) {
 
     const rect = elements.canvas.getBoundingClientRect();
     X -= (rect.left + globals.boardMargin);
-    Y -= (rect.top  + globals.boardMargin);
+    Y -= (rect.top);
 
     const cellSize = uiBoardCellSize();
     X = Math.floor(X / cellSize);
