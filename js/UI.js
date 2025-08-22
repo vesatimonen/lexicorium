@@ -71,9 +71,9 @@ function uiBoardRedraw(board) {
     /* Define board elements sizes */
     const textRatio   = 0.42;
     const tileSize    = tileRatio * cellSize;
-    const borderWidth = 2.0;
+    const borderWidth = 1.0;
     const enabledColor  = "#000000";
-    const disabledColor = "#00000080";
+    const disabledColor = "#00000020";
     const solvedColor   = "#00000020";
 
     /* Define board font */
@@ -99,7 +99,7 @@ function uiBoardRedraw(board) {
             /* Define color */
             var color = enabledColor;
             if (board.keyIsEnabled(x, y) == false) {
-//                color = disabledColor;
+                color = disabledColor;
             }
             if (board.rowSolved[y] == true) {
                 color = solvedColor;
