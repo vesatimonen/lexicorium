@@ -165,6 +165,13 @@ function restartCursorAnimation() {
     cursor.style.animation = 'none';           // temporarily disable
     cursor.offsetHeight;                       // force reflow (important!)
     cursor.style.animation = '';               // restore to CSS value
+    cursor.style.opacity = 1;
+}
+
+function stopCursorAnimation() {
+  const cursor = document.querySelector('.cursor');
+  cursor.style.animation = 'none'; // removes it completely
+  cursor.style.opacity = 0;
 }
 
 
@@ -179,7 +186,11 @@ function uiRedraw() {
     uiInfoRedraw(globals.game);
     uiButtonsRedraw(globals.game.board);
 
-    restartCursorAnimation();
+    if (globals.game.board.getWordStatus().length > 0) {
+        stopCursorAnimation();
+    } else {
+        restartCursorAnimation();
+    }
 }
 
 
