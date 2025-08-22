@@ -30,6 +30,12 @@ function uiEnter() {
 
 
 function uiKeyboard(event) {
+    if (globals.game.board.getWordStatus().length > 0) {
+        globals.game.board.statusClear();
+        uiRedraw();
+        return;
+    }
+
     if (event.key === 'Enter') {
         uiEnter();
     }

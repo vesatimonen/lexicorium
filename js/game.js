@@ -115,6 +115,11 @@ class Board {
 
 
     wordEnter() {
+        /* Check if word given */
+        if (this.wordText.length == 0) {
+            return;
+        }
+
         /* Check that all tiles are used */
         var rowIndex = 0;
         for (let row = 0; row < this.height; row++) {
