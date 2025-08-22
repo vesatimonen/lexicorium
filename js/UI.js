@@ -153,8 +153,8 @@ function uiBoardRedraw(board) {
         }
     }
 
-    elements.wordInfo.innerHTML = board.getWordText();
-
+//    elements.wordInfo.style.fontSize = "4mm";
+    elements.wordInfoText.innerHTML = board.getWordText();
 }
 
 
