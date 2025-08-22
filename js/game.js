@@ -228,10 +228,10 @@ class Board {
         /* Show instructions */
         const language = this.dbName.slice(0, 3);
         if (language == "FIN") {
-            elements.instructions.innerHTML = "Muodosta jokaiselle riville piilotettuun teemaan kuuluva sana, jossa käytetään kaikkia sen rivin ruutuja vähintään kerran.";
+            elements.instructions.innerHTML = "Muodosta jokaiselle riville piilotettuun teemaan kuuluva sana, jossa käytetään kaikkia sen rivin ruutuja <b>vähintään kerran</b>.";
         }
         if (language == "ENG") {
-            elements.instructions.innerHTML = "For each row, form a hidden-theme word using all its tiles at least once.";
+            elements.instructions.innerHTML = "For each row, form a hidden-theme word using all its tiles <b>at least once</b>.";
         }
 
         /* Read word database to set structure */
