@@ -57,14 +57,14 @@ function uiBoardRedraw(board) {
     const cellSize = uiBoardCellSize();
 
     /* Board size */
-    const boardWidth  = globals.boardMargin + cellSize * board.width  + globals.boardMargin;
+    const boardWidth  = cellSize * board.width;
     const boardHeight = cellSize * board.height;
 
     /* Center the board */
     elements.board.style.width  = boardWidth  + "px";
     elements.board.style.height = boardHeight + "px";
     elements.board.style.left   = elements.screen.clientWidth / 2
-                                - (globals.boardMargin + cellSize * (board.width / 2))
+                                - (cellSize * (board.width / 2))
                                 + "px";
 
     /* Set canvas size and clear it */
@@ -89,7 +89,7 @@ function uiBoardRedraw(board) {
                 continue;
             }
 
-            const startX  = globals.boardMargin + cellSize * x;
+            const startX  = cellSize * x;
             const startY  = cellSize * y;
             const middleX = startX + cellSize / 2;
             const middleY = startY + cellSize / 2;
@@ -140,7 +140,7 @@ function uiBoardRedraw(board) {
     /* Show solution for solved rows */
     for (let row = 0; row < board.height; row++) {
         if (board.rowSolved[row] == true) {
-            const middleX = globals.boardMargin + cellSize / 2;
+            const middleX = cellSize / 2;
             const middleY = cellSize * row + cellSize / 2;
 
             const fontWeight = "bold";
