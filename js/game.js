@@ -223,10 +223,10 @@ class Board {
         /* Show instructions */
         const language = this.dbName.slice(0, 3);
         if (language == "FIN") {
-            elements.instructions.innerHTML = "Etsi jokaiselle riville ja sarakkeelle sana, joka käyttää vähintään kerran kaikkia sen rivin/sarakkeen ruutuja.";
+            elements.instructions.innerHTML = "Etsi jokaiselle riville sana, joka käyttää vähintään kerran kaikkia sen rivin ruutuja.";
         }
         if (language == "ENG") {
-            elements.instructions.innerHTML = "Find a word for each row and column so that all word tiles on that row/column are used at least once.";
+            elements.instructions.innerHTML = "Find a word for each row so that all word tiles on that row are used at least once.";
         }
 
         /* Read word database to set structure */
