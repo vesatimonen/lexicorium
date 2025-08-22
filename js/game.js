@@ -107,7 +107,10 @@ class Board {
     }
 
     statusClear() {
-        this.wordStatus = "";
+        if (this.wordStatus.length > 0) {
+            this.wordStatus = "";
+            this.wordClear();
+        }
     }
 
 
@@ -124,7 +127,6 @@ class Board {
         for (let col = 0; col < this.colPressed.length; col++) {
             if (this.colPressed[col] == false && this.fragments[col][rowIndex] != undefined) {
                 this.wordStatus = "USE ALL TILES IN A ROW/COL";
-                this.wordClear();
                 return;
             }
         }
@@ -143,11 +145,9 @@ class Board {
         var upperWord = this.wordText.toUpperCase();
         if (this.wordSet.has(upperWord) == false) {
             this.wordStatus = "WORD NOT FOUND";
-            this.wordClear();
             return;
         } else {
             this.wordStatus = "WORD FOUND BUT NOT IN THEME";
-            this.wordClear();
             return;
         }
     }

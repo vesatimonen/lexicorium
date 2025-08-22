@@ -100,8 +100,11 @@ function uiKeyUp(board)
  *****************************************************************************/
 function uiMouseDown(event) {
     event.preventDefault();
-    globals.game.board.statusClear();
-    uiKeyDown(globals.game.board);
+    if (globals.game.board.getWordStatus().length > 0) {
+        globals.game.board.statusClear();
+    } else {
+        uiKeyDown(globals.game.board);
+    }
     event.stopPropagation();
     return false;
 }
