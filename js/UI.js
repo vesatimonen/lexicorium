@@ -81,26 +81,6 @@ function uiBoardRedraw(board) {
     const enabledColor  = "#202020";
     const disabledColor = "#20202080";
 
-    /* Mark solved rows */
-    const markLength = 8;
-    const markMargin = 4;
-    boardContext.strokeStyle = enabledColor;
-    boardContext.lineWidth   = 6.0;
-    boardContext.lineCap     = "round";
-    boardContext.lineJoin    = "round";
-    for (let row = 0; row < board.height; row++) {
-        if (board.rowSolved[row] == true) {
-            const leftX   = globals.boardMargin - markMargin + cellSize * 0;
-            const rightX  = globals.boardMargin + markMargin + cellSize * board.width;
-            const middleY = globals.boardMargin + cellSize * row + cellSize / 2;
-            boardContext.beginPath();
-            boardContext.moveTo(leftX - markLength, middleY - markLength);
-            boardContext.lineTo(leftX,              middleY);
-            boardContext.lineTo(leftX - markLength, middleY + markLength);
-            boardContext.stroke();
-        }
-    }
-
     /* Redraw cell content */
     for (y = 0; y < board.height; y++) {
         for (x = 0; x < board.width; x++) {
@@ -152,6 +132,28 @@ function uiBoardRedraw(board) {
             boardContext.fillText(board.fragments[x][y], middleX, middleY);
         }
     }
+
+    /* Show solution for solved rows */
+    const markLength = 8;
+    const markMargin = 4;
+    boardContext.strokeStyle = enabledColor;
+    boardContext.lineWidth   = 6.0;
+    boardContext.lineCap     = "round";
+    boardContext.lineJoin    = "round";
+    for (let row = 0; row < board.height; row++) {
+        if (board.rowSolved[row] == true) {
+            const leftX   = globals.boardMargin - markMargin + cellSize * 0;
+            const rightX  = globals.boardMargin + markMargin + cellSize * board.width;
+            const middleY = globals.boardMargin + cellSize * row + cellSize / 2;
+            boardContext.beginPath();
+            boardContext.moveTo(leftX - markLength, middleY - markLength);
+            boardContext.lineTo(leftX,              middleY);
+            boardContext.lineTo(leftX - markLength, middleY + markLength);
+            boardContext.stroke();
+        }
+    }
+
+
 }
 
 
