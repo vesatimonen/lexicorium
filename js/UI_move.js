@@ -139,5 +139,5 @@ elements.board.addEventListener("mouseleave", uiMouseLeave);
 elements.board.addEventListener("touchstart", uiMouseDown, {passive: true});
 elements.board.addEventListener("touchend",   uiMouseUp);
 
-elements.screen.addEventListener("mousedown", uiScreenMouseDown);
+document.addEventListener("mousedown", uiScreenMouseDown);
 
