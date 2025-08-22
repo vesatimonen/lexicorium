@@ -123,19 +123,27 @@ class Board {
             }
         }
 
+        /* Check if solutions */
+        if (this.wordText == this.rowSolution[rowIndex]) {
+            /* Mark row solved */
+            this.rowSolved[rowIndex] = true;
+
+            this.statusClear();
+            this.wordClear();
+            return;
+        }
+
         /* Check word in DB */
         var upperWord = this.wordText.toUpperCase();
         if (this.wordSet.has(upperWord) == false) {
             this.wordStatus = "WORD NOT FOUND";
             this.wordClear();
             return;
+        } else {
+            this.wordStatus = "WORD FOUND BUT NOT IN THEME";
+            this.wordClear();
+            return;
         }
-
-        /* Mark row solved */
-        this.rowSolved[rowIndex] = true;
-
-        this.statusClear();
-        this.wordClear();
     }
 
     wordLength() {
