@@ -38,13 +38,14 @@ function uiEventPosition(event) {
             return undefined;
     }
 
+    const cellSize = uiBoardCellSize();
+
     const rect = elements.canvas.getBoundingClientRect();
     X -= rect.left;
-    Y -= rect.top;
+    Y -= (rect.top - globals.boardRowMargin * cellSize / 2);
 
-    const cellSize = uiBoardCellSize();
     X = Math.floor(X / cellSize);
-    Y = Math.floor(Y / cellSize);
+    Y = Math.floor(Y / (cellSize + globals.boardRowMargin * cellSize));
 
     return {X, Y};
 }

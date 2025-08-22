@@ -2,12 +2,13 @@
  * Global variables
  *****************************************************************************/
 var globals = {
-    game:         undefined,
-    storage:      undefined,
+    game:           undefined,
+    storage:        undefined,
 
-    boardMaxSize: 6.25,
+    boardMaxSize:   6.25,
+    boardRowMargin: 0.10,
 
-    uiKeyPressed: undefined,
+    uiKeyPressed:   undefined,
 };
 
 /*****************************************************************************
