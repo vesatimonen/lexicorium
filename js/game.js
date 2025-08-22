@@ -60,7 +60,7 @@ class Board {
 
         /* Check that only one row used */
         var rowCount = 0;
-        for (let row = 0; row < this.rowPressed.length; row++) {
+        for (let row = 0; row < this.height; row++) {
             if (this.rowPressed[row] == true || y == row) {
                 rowCount++;
             }
@@ -91,7 +91,7 @@ class Board {
 
     solved() {
         /* Check solved lines */
-        for (let row = 0; row < this.rowSolved.length; row++) {
+        for (let row = 0; row < this.height; row++) {
             if (this.rowSolved[row] != true) {
                 return false;
             }
@@ -186,7 +186,7 @@ class Board {
         this.wordStatus = "";
         this.wordText   = "";
 
-        this.colPressed  = Array(this.width).fill(false);
+        this.colPressed  = Array(maxWidth).fill(false);
         this.rowPressed  = Array(this.height).fill(false);
         this.rowSolved   = Array(this.height).fill(false);
         this.rowSolution = Array(this.height).fill(false);
