@@ -37,7 +37,7 @@ function uiInfoRedraw(game) {
  * Redraw status
  *****************************************************************************/
 function uiStatusRedraw(board) {
-    elements.wordStatus.innerHTML = board.status;
+    elements.wordStatus.innerHTML = board.wordStatus;
 }
 
 /*****************************************************************************

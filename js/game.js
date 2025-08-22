@@ -30,7 +30,7 @@ class Board {
         this.wordSet   = undefined;
 
         /* Status */
-        this.status = "";
+        this.wordStatus = "";
 
         /* Word */
         this.word = "";
@@ -104,7 +104,7 @@ class Board {
     }
 
     statusClear() {
-        this.status = "";
+        this.wordStatus = "";
     }
 
 
@@ -120,7 +120,7 @@ class Board {
         var colCount = 0;
         for (let col = 0; col < this.colPressed.length; col++) {
             if (this.colPressed[col] == false && this.fragments[col][rowIndex] != undefined) {
-                this.status = "USE ALL TILES IN A ROW/COL";
+                this.wordStatus = "USE ALL TILES IN A ROW/COL";
                 this.wordClear();
                 return;
             }
@@ -129,7 +129,7 @@ class Board {
         /* Check word in DB */
         var upperWord = this.word.toUpperCase();
         if (this.wordSet.has(upperWord) == false) {
-            this.status = "WORD NOT FOUND";
+            this.wordStatus = "WORD NOT FOUND";
             this.wordClear();
             return;
         }
@@ -178,7 +178,7 @@ class Board {
         }
 
         /* Initialize progress variables */
-        this.status = "";
+        this.wordStatus = "";
         this.word = "";
 
         this.colPressed = Array(this.width).fill(false);
