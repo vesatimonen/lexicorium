@@ -41,6 +41,8 @@ class Board {
 
         /* Solved rows */
         this.rowSolved = [undefined];
+
+        this.rowSolution = "";
     }
 
     keyIsEnabled(x, y) {
@@ -179,13 +181,11 @@ class Board {
         this.status = "";
         this.word = "";
 
-        this.rowPressed = Array(this.height);
-        this.colPressed = Array(this.width);
-        this.rowPressed.fill(false);
-        this.colPressed.fill(false);
+        this.colPressed = Array(this.width).fill(false);
+        this.rowPressed = Array(this.height).fill(false);
+        this.rowSolved  = Array(this.height).fill(false);
 
-        this.rowSolved = Array(this.height);
-        this.rowSolved.fill(false);
+        this.rowSolution = "";
 
         /* Show instructions */
         const language = this.dbName.slice(0, 3);
