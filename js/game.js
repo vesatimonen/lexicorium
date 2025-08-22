@@ -29,11 +29,9 @@ class Board {
         /* Word database (set) */
         this.wordSet   = undefined;
 
-        /* Status */
+        /* Status and text */
         this.wordStatus = "";
-
-        /* Word */
-        this.word = "";
+        this.wordText   = "";
 
         /* Pressed keys */
         this.rowPressed = [undefined];
@@ -76,11 +74,11 @@ class Board {
             return;
         }
 
-        if (this.word.length + this.fragments[X][Y].length > 20) {
+        if (this.wordText.length + this.fragments[X][Y].length > 20) {
             return;
         }
 
-        this.word = this.word + this.fragments[X][Y];
+        this.wordText = this.wordText + this.fragments[X][Y];
 
         this.rowPressed[Y] = true;
         this.colPressed[X] = true;
@@ -98,7 +96,7 @@ class Board {
     }
 
     wordClear() {
-        this.word = "";
+        this.wordText = "";
         this.rowPressed.fill(false);
         this.colPressed.fill(false);
     }
@@ -127,7 +125,7 @@ class Board {
         }
 
         /* Check word in DB */
-        var upperWord = this.word.toUpperCase();
+        var upperWord = this.wordText.toUpperCase();
         if (this.wordSet.has(upperWord) == false) {
             this.wordStatus = "WORD NOT FOUND";
             this.wordClear();
@@ -142,7 +140,7 @@ class Board {
     }
 
     wordLength() {
-        return this.word.length;
+        return this.wordText.length;
     }
 
     /* Initialize game */
@@ -179,7 +177,7 @@ class Board {
 
         /* Initialize progress variables */
         this.wordStatus = "";
-        this.word = "";
+        this.wordText   = "";
 
         this.colPressed = Array(this.width).fill(false);
         this.rowPressed = Array(this.height).fill(false);

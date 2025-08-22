@@ -44,7 +44,7 @@ function uiStatusRedraw(board) {
  * Redraw word
  *****************************************************************************/
 function uiWordRedraw(board) {
-    elements.wordInfo.innerHTML = board.word;
+    elements.wordInfo.innerHTML = board.wordText;
 }
 
 /*****************************************************************************
