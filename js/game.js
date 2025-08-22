@@ -126,7 +126,7 @@ class Board {
         var colCount = 0;
         for (let col = 0; col < this.width; col++) {
             if (this.colPressed[col] == false && this.fragments[col][rowIndex] != undefined) {
-                this.wordStatus = "USE ALL TILES IN A ROW/COL";
+                this.wordStatus = "USE ALL TILES IN A ROW";
                 return;
             }
         }
