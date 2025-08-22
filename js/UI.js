@@ -97,7 +97,7 @@ function uiBoardRedraw(board) {
             /* Define color */
             var color = enabledColor;
             if (board.keyIsEnabled(x, y) == false) {
-                color = disabledColor;
+//                color = disabledColor;
             }
             if (board.rowSolved[y] == true) {
                 color = solvedColor;
