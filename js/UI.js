@@ -142,18 +142,22 @@ function uiBoardRedraw(board) {
     boardContext.lineJoin    = "round";
     for (let row = 0; row < board.height; row++) {
         if (board.rowSolved[row] == true) {
-            const leftX   = globals.boardMargin - markMargin + cellSize * 0;
-            const rightX  = globals.boardMargin + markMargin + cellSize * board.width;
+            const middleX = globals.boardMargin + board.width * cellSize / 2;
             const middleY = globals.boardMargin + cellSize * row + cellSize / 2;
-            boardContext.beginPath();
-            boardContext.moveTo(leftX - markLength, middleY - markLength);
-            boardContext.lineTo(leftX,              middleY);
-            boardContext.lineTo(leftX - markLength, middleY + markLength);
-            boardContext.stroke();
+
+            const fontWeight = "bold";
+            const fontStyle  = "normal";
+            const fontSize   = (cellSize * textRatio) + "px";
+            const fontFamily = "Courier New";
+
+            boardContext.font         = `${fontWeight} ${fontStyle} ${fontSize} ${fontFamily}`;
+            boardContext.textBaseline = "middle";
+            boardContext.textAlign    = "center";
+            boardContext.fillStyle    = color;
+
+            boardContext.fillText(board.rowSolution[row], middleX, middleY);
         }
     }
-
-
 }
 
 
