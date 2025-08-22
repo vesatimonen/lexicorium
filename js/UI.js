@@ -140,7 +140,8 @@ function uiBoardRedraw(board) {
     /* Show solution for solved rows */
     for (let row = 0; row < board.height; row++) {
         if (board.rowSolved[row] == true) {
-            const middleX = globals.boardMargin + board.width * cellSize / 2;
+            const middleX = globals.boardMargin + cellSize / 2;
+//            const middleX = globals.boardMargin + board.width * cellSize / 2;
             const middleY = globals.boardMargin + cellSize * row + cellSize / 2;
 
             const fontWeight = "bold";
@@ -150,7 +151,7 @@ function uiBoardRedraw(board) {
 
             boardContext.font         = `${fontWeight} ${fontStyle} ${fontSize} ${fontFamily}`;
             boardContext.textBaseline = "middle";
-            boardContext.textAlign    = "center";
+            boardContext.textAlign    = "left";
             boardContext.fillStyle    = enabledColor;
 
             boardContext.fillText(board.rowSolution[row], middleX, middleY);
