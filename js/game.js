@@ -228,7 +228,7 @@ class Board {
         /* Show instructions */
         const language = this.dbName.slice(0, 3);
         if (language == "FIN") {
-            elements.instructions.innerHTML = "Muodosta jokaiselle riville piilotettuun teemaan kuuluva sana, jossa käytetään kaikkia sen rivin ruutuja <b>vähintään kerran</b>.";
+            elements.instructions.innerHTML = "Muodosta kaikille riveille samaan teemaan kuuluva sana käyttäen <b>vähintään kerran</b> jokaista sen rivin ruutua.";
         }
         if (language == "ENG") {
             elements.instructions.innerHTML = "For each row, form a hidden-theme word using all its tiles <b>at least once</b>.";
