@@ -16,7 +16,7 @@ function uiBoardCellSize() {
  * Redraw buttons
  *****************************************************************************/
 function uiButtonsRedraw(board) {
-    if (board.wordLength() > 0) {
+    if (board.getWordTextLength() > 0) {
         elements.buttonEnter.disabled = false;
         elements.buttonClear.disabled = false;
     } else {

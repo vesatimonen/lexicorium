@@ -152,7 +152,7 @@ class Board {
         }
     }
 
-    wordLength() {
+    getWordTextLength() {
         return this.wordText.length;
     }
 
