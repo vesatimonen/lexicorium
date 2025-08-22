@@ -223,10 +223,10 @@ class Board {
         /* Show instructions */
         const language = this.dbName.slice(0, 3);
         if (language == "FIN") {
-            elements.instructions.innerHTML = "Muodosta jokaiselle riville sana, jossa käytetään kaikkia rivin ruutuja vähintään kerran. Kaikkien sanojen on kuuluttava samaan piilotettuun teemaan.";
+            elements.instructions.innerHTML = "Muodosta jokaiselle riville piilotettuun teemaan kuuluva sana, jossa käytetään kaikkia sen rivin ruutuja vähintään kerran.";
         }
         if (language == "ENG") {
-            elements.instructions.innerHTML = "Form a word for each row so that all tiles in that row are used at least once. All words must belong to the same hidden theme.";
+            elements.instructions.innerHTML = "For each row, form a hidden-theme word using all its tiles at least once.";
         }
 
         /* Read word database to set structure */
