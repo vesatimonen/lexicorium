@@ -172,9 +172,15 @@
 }
 
 
-#game-info {
+#game-controls {
     margin-top:     0mm;
-    margin-bottom:  5mm;
+    margin-bottom:  3mm;
+
+    display:        flex;
+}
+
+#game-info {
+    margin:         auto;
 
     font-size:      7mm;
     font-weight:    bold;
