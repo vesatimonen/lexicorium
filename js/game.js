@@ -43,23 +43,29 @@ class Board {
     }
 
     keyIsEnabled(x, y) {
+        /* Check board boundaries */
         if (x < 0 || y < 0 || x >= this.width || y >= this.height) {
             return false;
         }
 
+        /* Check if already solved */
+        if (this.rowSolved[y] == true) {
+            return false;
+        }
+
+        /* Check fragment content */
         if (this.fragments[x][y] == undefined) {
             return false;
         }
 
+        /* Check that only one row used */
         var rowCount = 0;
         for (let row = 0; row < this.rowPressed.length; row++) {
             if (this.rowPressed[row] == true || y == row) {
                 rowCount++;
             }
         }
-
         if (rowCount > 1) {
-            // Not possible
             return false;
         }
 
