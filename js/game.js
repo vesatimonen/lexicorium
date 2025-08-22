@@ -187,9 +187,12 @@ class Board {
         this.wordText   = "";
 
         this.colPressed  = Array(maxWidth).fill(false);
-        this.rowPressed  = Array(this.height).fill(false);
-        this.rowSolved   = Array(this.height).fill(false);
-        this.rowSolution = Array(this.height).fill(false);
+        this.rowPressed  = Array(maxHeight).fill(false);
+        this.rowSolved   = Array(maxHeight).fill(false);
+        this.rowSolution = Array(maxHeight).fill(false);
+
+        /* Determine width of the board */
+        this.width = 0;
 
         let row = 0;
         for (let field = 2; field < fields.length; field += 2) {
@@ -197,6 +200,11 @@ class Board {
             let fragments = fields[field].split('.');
             for (let fragment = 0; fragment < fragments.length; fragment++) {
                 this.fragments[fragment][row] = fragments[fragment];
+            }
+
+            /* Determine width of board */
+            if (fragments.length > this.width) {
+                this.width = fragments.length;
             }
 
             /* Parse solution */
@@ -209,6 +217,8 @@ class Board {
 
             row++;
         }
+
+
 
         /* Show instructions */
         const language = this.dbName.slice(0, 3);
