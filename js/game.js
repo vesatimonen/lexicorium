@@ -37,10 +37,9 @@ class Board {
         this.rowPressed = [undefined];
         this.colPressed = [undefined];
 
-        /* Solved rows */
-        this.rowSolved = [undefined];
-
-        this.rowSolution = "";
+        /* Row progress */
+        this.rowSolution = [undefined];
+        this.rowSolved   = [undefined];
     }
 
     keyIsEnabled(x, y) {
@@ -155,7 +154,6 @@ class Board {
         /* Database name */
         this.dbName = fields[0];
 
-
         /* Word count */
         this.height = parseInt(fields[1]);
 
@@ -163,27 +161,34 @@ class Board {
         this.width = 6;
 
         /* Go through fragment fields */
+        /* Initialize board variables */
         this.fragments = array2D(this.width, this.height);
-
-        let word = 0;
-        for (let field = 2; field < fields.length; field += 2) {
-            let fragments = fields[field].split('.');
-            for (let fragment = 0; fragment < fragments.length; fragment++) {
-                this.fragments[fragment][word] = fragments[fragment];
-            }
-
-            word++;
-        }
-
-        /* Initialize progress variables */
         this.wordStatus = "";
         this.wordText   = "";
 
-        this.colPressed = Array(this.width).fill(false);
-        this.rowPressed = Array(this.height).fill(false);
-        this.rowSolved  = Array(this.height).fill(false);
+        this.colPressed  = Array(this.width).fill(false);
+        this.rowPressed  = Array(this.height).fill(false);
+        this.rowSolved   = Array(this.height).fill(false);
+        this.rowSolution = Array(this.height).fill(false);
 
-        this.rowSolution = "";
+        let row = 0;
+        for (let field = 2; field < fields.length; field += 2) {
+            /* Parse word fragments */
+            let fragments = fields[field].split('.');
+            for (let fragment = 0; fragment < fragments.length; fragment++) {
+                this.fragments[fragment][row] = fragments[fragment];
+            }
+
+            /* Parse solution */
+            this.rowSolution[row] = "";
+            const sequenceStr = fields[field + 1];
+            for (let i = 0; i < sequenceStr.length; i++) {
+                const fragment = parseInt(sequenceStr[i]);
+                this.rowSolution[row] += this.fragments[fragment][row]
+            }
+
+            row++;
+        }
 
         /* Show instructions */
         const language = this.dbName.slice(0, 3);
