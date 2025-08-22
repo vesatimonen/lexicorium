@@ -117,7 +117,7 @@ class Board {
     wordEnter() {
         /* Check that all tiles are used */
         var rowIndex = 0;
-        for (let row = 0; row < this.rowPressed.length; row++) {
+        for (let row = 0; row < this.height; row++) {
             if (this.rowPressed[row] == true) {
                 rowIndex = row;
             }
