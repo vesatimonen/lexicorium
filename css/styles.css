@@ -35,7 +35,7 @@
 
 #game-title {
     margin-top:     3mm;
-    margin-bottom:  2mm;
+    margin-bottom:  4mm;
 
     font-size:      10mm;
     font-weight:    bold;
@@ -43,9 +43,54 @@
     text-align:     center;
 }
 
-#word-status {
+/*
+#word-info {
     margin-top:     0mm;
     margin-bottom:  0mm;
+
+    max-width:      100%;
+
+    display:        block;
+
+    font-size:      8mm;
+    font-weight:    bold;
+    text-align:     center;
+    margin:         auto;
+
+    justify-content:flex-end;
+    overflow-x:     auto;
+}
+*/
+
+#word-info {
+    margin:          auto;
+
+    max-width:       100%;
+
+    display:         flex;
+
+    font-size:       8mm;
+    font-weight:     bold;
+
+    justify-content: flex-end;
+    overflow-x:      auto;
+    white-space:     nowrap;
+
+}
+
+#word-info-text {
+    margin-right:   0;
+    margin-left:    auto;
+}
+
+#word-info-cursor {
+    margin-left:    0;
+    margin-right:   auto;
+}
+
+#word-status {
+    margin-top:     0mm;
+    margin-bottom:  3mm;
 
     height:         4mm;
 
@@ -56,25 +101,6 @@
     text-align:     center;
 }
 
-#word-controls {
-    margin-top:     0mm;
-    margin-bottom:  3mm;
-
-    display:         flex;
-}
-#word-info {
-    max-width:      100%;
-
-    display:        flex;
-
-    font-size:      8mm;
-    font-weight:    bold;
-    text-align:     center;
-    margin:         auto;
-
-    justify-content:flex-end; /* align text to the right */
-    overflow-x:     auto;     /* enable horizontal scrolling */
-}
 
 .cursor {
     animation: blink 1.0s steps(1) infinite;
