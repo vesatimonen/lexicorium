@@ -124,7 +124,7 @@ class Board {
         }
 
         var colCount = 0;
-        for (let col = 0; col < this.colPressed.length; col++) {
+        for (let col = 0; col < this.width; col++) {
             if (this.colPressed[col] == false && this.fragments[col][rowIndex] != undefined) {
                 this.wordStatus = "USE ALL TILES IN A ROW/COL";
                 return;
@@ -176,11 +176,13 @@ class Board {
         this.height = parseInt(fields[1]);
 
         /* Max fragments */
-        this.width = 6;
+        this.width = 4;
 
-        /* Go through fragment fields */
+        const maxWidth  = 8;
+        const maxHeight = 8;
+
         /* Initialize board variables */
-        this.fragments = array2D(this.width, this.height);
+        this.fragments = array2D(maxWidth, maxHeight);
         this.wordStatus = "";
         this.wordText   = "";
 
