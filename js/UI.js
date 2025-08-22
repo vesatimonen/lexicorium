@@ -40,12 +40,6 @@ function uiStatusRedraw(board) {
     elements.wordStatus.innerHTML = board.getWordStatus();
 }
 
-/*****************************************************************************
- * Redraw word
- *****************************************************************************/
-function uiWordRedraw(board) {
-    elements.wordInfo.innerHTML = board.getWordText();
-}
 
 /*****************************************************************************
  * Redraw board
@@ -137,25 +131,30 @@ function uiBoardRedraw(board) {
         }
     }
 
+    /* Word text and solution words*/
+    const fontWeight = "bold";
+    const fontStyle  = "normal";
+    const fontSize   = (cellSize * textRatio) + "px";
+    const fontFamily = "Courier New";
+
+    boardContext.font         = `${fontWeight} ${fontStyle} ${fontSize} ${fontFamily}`;
+    boardContext.textBaseline = "middle";
+    boardContext.textAlign    = "left";
+    boardContext.fillStyle    = enabledColor;
+
     /* Show solution for solved rows */
     for (let row = 0; row < board.height; row++) {
         if (board.rowSolved[row] == true) {
             const middleX = cellSize / 2;
             const middleY = (cellSize + globals.boardRowMargin * cellSize) * row + cellSize / 2;
 
-            const fontWeight = "bold";
-            const fontStyle  = "normal";
-            const fontSize   = (cellSize * textRatio) + "px";
-            const fontFamily = "Courier New";
-
-            boardContext.font         = `${fontWeight} ${fontStyle} ${fontSize} ${fontFamily}`;
-            boardContext.textBaseline = "middle";
-            boardContext.textAlign    = "left";
-            boardContext.fillStyle    = enabledColor;
 
             boardContext.fillText(board.rowSolution[row], middleX, middleY);
         }
     }
+
+    elements.wordInfo.innerHTML = board.getWordText();
+
 }
 
 
@@ -180,7 +179,6 @@ function stopCursorAnimation() {
 function uiRedraw() {
     /* Redraw board elements */
     uiStatusRedraw(globals.game.board);
-    uiWordRedraw(globals.game.board);
     uiBoardRedraw(globals.game.board);
     uiInfoRedraw(globals.game);
     uiButtonsRedraw(globals.game.board);
