@@ -36,11 +36,11 @@ class Board {
         this.word = "";
 
         /* Pressed keys */
-        this.pressedRow = [undefined];
-        this.pressedCol = [undefined];
+        this.rowPressed = [undefined];
+        this.colPressed = [undefined];
 
-        /* Solved lines */
-        this.solvedRow = [undefined];
+        /* Solved rows */
+        this.rowSolved = [undefined];
     }
 
     keyIsEnabled(x, y) {
@@ -53,8 +53,8 @@ class Board {
         }
 
         var rowCount = 0;
-        for (let row = 0; row < this.pressedRow.length; row++) {
-            if (this.pressedRow[row] == true || y == row) {
+        for (let row = 0; row < this.rowPressed.length; row++) {
+            if (this.rowPressed[row] == true || y == row) {
                 rowCount++;
             }
         }
@@ -80,14 +80,14 @@ class Board {
 
         this.word = this.word + this.fragments[X][Y];
 
-        this.pressedRow[Y] = true;
-        this.pressedCol[X] = true;
+        this.rowPressed[Y] = true;
+        this.colPressed[X] = true;
     }
 
     solved() {
         /* Check solved lines */
-        for (let row = 0; row < this.solvedRow.length; row++) {
-            if (this.solvedRow[row] != true) {
+        for (let row = 0; row < this.rowSolved.length; row++) {
+            if (this.rowSolved[row] != true) {
                 return false;
             }
         }
@@ -97,8 +97,8 @@ class Board {
 
     wordClear() {
         this.word = "";
-        this.pressedRow.fill(false);
-        this.pressedCol.fill(false);
+        this.rowPressed.fill(false);
+        this.colPressed.fill(false);
     }
 
     statusClear() {
@@ -109,15 +109,15 @@ class Board {
     wordEnter() {
         /* Check that all tiles are used */
         var rowIndex = 0;
-        for (let row = 0; row < this.pressedRow.length; row++) {
-            if (this.pressedRow[row] == true) {
+        for (let row = 0; row < this.rowPressed.length; row++) {
+            if (this.rowPressed[row] == true) {
                 rowIndex = row;
             }
         }
 
         var colCount = 0;
-        for (let col = 0; col < this.pressedCol.length; col++) {
-            if (this.pressedCol[col] == false && this.fragments[col][rowIndex] != undefined) {
+        for (let col = 0; col < this.colPressed.length; col++) {
+            if (this.colPressed[col] == false && this.fragments[col][rowIndex] != undefined) {
                 this.status = "USE ALL TILES IN A ROW/COL";
                 this.wordClear();
                 return;
@@ -133,7 +133,7 @@ class Board {
         }
 
         /* Mark row solved */
-        this.solvedRow[rowIndex] = true;
+        this.rowSolved[rowIndex] = true;
 
         this.statusClear();
         this.wordClear();
@@ -179,13 +179,13 @@ class Board {
         this.status = "";
         this.word = "";
 
-        this.pressedRow = Array(this.height);
-        this.pressedCol = Array(this.width);
-        this.pressedRow.fill(false);
-        this.pressedCol.fill(false);
+        this.rowPressed = Array(this.height);
+        this.colPressed = Array(this.width);
+        this.rowPressed.fill(false);
+        this.colPressed.fill(false);
 
-        this.solvedRow = Array(this.height);
-        this.solvedRow.fill(false);
+        this.rowSolved = Array(this.height);
+        this.rowSolved.fill(false);
 
         /* Show instructions */
         const language = this.dbName.slice(0, 3);
