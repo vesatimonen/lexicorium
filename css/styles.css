@@ -94,7 +94,7 @@
 
 #game-board {
     margin-top:     0mm;
-    margin-bottom:  3mm;
+    margin-bottom:  4mm;
 
     position:       relative;
 
@@ -181,7 +181,7 @@
 
 #game-controls {
     margin-top:     0mm;
-    margin-bottom:  3mm;
+    margin-bottom:  4mm;
 
     display:        flex;
 }

@@ -9,6 +9,10 @@ const challengeSetFIN = [
     {info: "INFO: >FIN:5:e.h.m.u:13320:k.m.r.y:132003:a.i.k.n.o:24201131:a.i.o.p.t:23100441:a.b.i.n.o.t:03521244552"},
     {info: "INFO: >FIN:5:a.e.i.k.l.r:3144052:a.k.o.t:10332:k.t.v.y.ä:0431424:e.i.n.t:0301202:a.k.t:20110"},
     {info: "INFO: >FIN:5:ai.t.us.vu:10312:i.ne.tr.u:1320:at.i.iv.n.om:34130121:e.la.s.u:1320:k.ku.l.pi:3201"},
+    {info: "INFO: >FIN:5:a.el.i.p.s:40312:as.i.ko.mp.s:23041:a.k.ro.u:131102:ik.ko.l.ta:3201:i.iv.lä.s:30102"},
+
+
+
 ];
 
 const challengeSetENG = [
