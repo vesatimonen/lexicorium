@@ -158,12 +158,12 @@
     /* Appearance */
     color:          #000000;
     background:     #B0DDFF;
-    border:         1px solid #000000;
+    border:         2px solid #000000;
     border-radius:  10px;
 
     /* Size */
-    width:          15mm;
-    height:         15mm;
+    width:          30%;
+    height:         12mm;
 
     /* Text */
     font-size:      6mm;
