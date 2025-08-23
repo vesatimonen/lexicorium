@@ -73,7 +73,7 @@ function uiBoardRedraw(board) {
     const tileSize    = tileRatio * cellSize;
     const borderWidth = 1.0;
     const enabledColor  = "#000000";
-    const disabledColor = "#00000020";
+    const disabledColor = "#000000A0";
     const solvedColor   = "#00000020";
 
     /* Define board font */
