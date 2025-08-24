@@ -72,12 +72,14 @@ function uiBoardRedraw(board) {
     const tileSize    = tileRatio * cellSize;
     const borderWidth = 1.0;
 
-    const enabledColor  = "#000000";
-    const disabledColor = "#000000A0";
-    const solvedColor   = "#00000020";
+    const colorStrokeEnabled  = "#000000";
+    const colorStrokeDisabled = "#000000A0";
+    const colorStrokeSolved   = "#00000020";
 
-    const buttonColor   = "#8BCEF5"; // from CSS
-    const pressedColor  = "#67BFEC"; // from CSS
+    const colorButtonEnabled  = "#9DD5FA";   // from CSS 8BCEF5 / #B0DDFF
+    const colorButtonDisabled = "#9DD5FAA0";
+    const colorButtonSolved   = "#9DD5FA20";
+    const colorButtonDown     = "#67BFEC";   // from CSS
 
     /* Define board font */
     const fontWeight = "bold";
@@ -99,13 +101,16 @@ function uiBoardRedraw(board) {
             const middleX = startX + cellSize / 2;
             const middleY = startY + cellSize / 2;
 
-            /* Define color */
-            var color = enabledColor;
+            /* Define colors */
+            var strokeColor = colorStrokeEnabled;
+            var buttonColor = colorButtonEnabled;
             if (board.keyIsEnabled(x, y) == false) {
-                color = disabledColor;
+                strokeColor = colorStrokeDisabled;
+                buttonColor = colorButtonDisabled;
             }
             if (board.rowSolved[y] == true) {
-                color = solvedColor;
+                strokeColor = colorStrokeSolved;
+                buttonColor = colorButtonSolved;
             }
 
             /* Cell borders */
@@ -119,26 +124,26 @@ function uiBoardRedraw(board) {
             boardContext.fillStyle = buttonColor;
             if (globals.uiKeyPressed != undefined) {
                 if (x == globals.uiKeyPressed.X && y == globals.uiKeyPressed.Y) {
-                    boardContext.fillStyle = pressedColor;
+                    boardContext.fillStyle = colorButtonDown;
                 }
             }
             boardContext.fill();
 
-            boardContext.strokeStyle = color;
+            boardContext.strokeStyle = strokeColor;
             boardContext.lineWidth   = borderWidth;
             boardContext.lineCap     = "round";
             boardContext.stroke();
 
             /* Fragment */
             boardContext.textAlign    = "center";
-            boardContext.fillStyle    = color;
+            boardContext.fillStyle    = strokeColor;
             boardContext.fillText(board.fragments[x][y], middleX, middleY);
         }
     }
 
     /* Word text and solution words*/
     boardContext.textAlign    = "left";
-    boardContext.fillStyle    = enabledColor;
+    boardContext.fillStyle    = colorStrokeEnabled;
 
     /* Show solution for solved rows */
     for (let row = 0; row < board.height; row++) {
