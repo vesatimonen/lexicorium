@@ -1,6 +1,5 @@
 
 // Get these from CSS
-const usedColor       = "#67BFEC";
 
 const tileRatio   = 0.90;
 
@@ -72,9 +71,13 @@ function uiBoardRedraw(board) {
     const textRatio   = 0.50;
     const tileSize    = tileRatio * cellSize;
     const borderWidth = 1.0;
+
     const enabledColor  = "#000000";
     const disabledColor = "#000000A0";
     const solvedColor   = "#00000020";
+
+    const buttonColor   = "#8BCEF5"; // from CSS
+    const pressedColor  = "#67BFEC"; // from CSS
 
     /* Define board font */
     const fontWeight = "bold";
@@ -113,12 +116,13 @@ function uiBoardRedraw(board) {
                                    cellSize - 2 * boxMargin, cellSize - 2 * boxMargin,
                                    10);
 
+            boardContext.fillStyle = buttonColor;
             if (globals.uiKeyPressed != undefined) {
                 if (x == globals.uiKeyPressed.X && y == globals.uiKeyPressed.Y) {
-                    boardContext.fillStyle = usedColor;
-                    boardContext.fill();
+                    boardContext.fillStyle = pressedColor;
                 }
             }
+            boardContext.fill();
 
             boardContext.strokeStyle = color;
             boardContext.lineWidth   = borderWidth;
