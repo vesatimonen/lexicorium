@@ -11,6 +11,13 @@ const challengeSetFIN = [
     {info: "INFO: >FIN:5:ai.t.us.vu:10312:i.ne.tr.u:1320:at.i.iv.n.om:34130121:e.la.s.u:1320:k.ku.l.pi:3201"},
     {info: "INFO: >FIN:5:a.el.i.p.s:40312:as.i.ko.mp.s:23041:a.k.ro.u:131102:ik.ko.l.ta:3201:i.iv.lä.s:30102"},
 
+    {info: "INFO: >FIN:5:i.l.o.v:210030:a.k.r.v:10230:a.i.l.m.r:03140021:a.e.h.k.t.u:212354400:a.k.l.u:10320"},
+    {info: "INFO: >FIN:5:a.e.i.l.p.s:142314520:e.i.l.n.t.v:503441121:a.i.r.t:21130:e.i.k.n.s:204201303:e.i.n.t:0321202"},
+    {info: "INFO: >FIN:5:e.l.mp.ys:10203:a.ta.vit:0210:jum.p.pa:012:a.n.rsk.tel.u.ut:102534:a.k.r.uss:230110"},
+    {info: "INFO: >FIN:5:b.ler.o:0212:a.h.me:102:a.ik.it.k:2130:l.o.rdi:012:s.yv.ä:012"},
+
+
+
 
 
 ];
