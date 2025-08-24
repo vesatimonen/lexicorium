@@ -69,7 +69,7 @@ function uiBoardRedraw(board) {
     boardContext.clearRect(0, 0, elements.canvas.width, elements.canvas.height);
 
     /* Define board elements sizes */
-    const textRatio   = 0.42;
+    const textRatio   = 0.50;
     const tileSize    = tileRatio * cellSize;
     const borderWidth = 1.0;
     const enabledColor  = "#000000";

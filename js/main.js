@@ -16,10 +16,11 @@ const challengeSetFIN = [
     {info: "INFO: >FIN:5:e.l.mp.ys:10203:a.ta.vit:0210:jum.p.pa:012:a.n.rsk.tel.u.ut:102534:a.k.r.uss:230110"},
     {info: "INFO: >FIN:5:b.ler.o:0212:a.h.me:102:a.ik.it.k:2130:l.o.rdi:012:s.yv.ä:012"},
 
-
-
-
-
+    {info: "INFO: >FIN:5:a.h.i.l.v:321040:at.i.p.r.s.yk:2451031:a.em.n.ol.to:31042:en.in.ju.lk:2310:e.r.u:22110"},
+    {info: "INFO: >FIN:5:im.pi.ä:102:jä.k.ky.y.ys:03124:a.s.ti:0120:ai.as.m:210:ke.ky.t.ä:1203"},
+    {info: "INFO: >FIN:5:a.h.ko.o.t:2134400:a.al.i.l.p.ur:435012:k.n.ne.nä.öi:30421:au.l.ta:102:ni.s.to.uo:13012"},
+    {info: "INFO: >FIN:5:i.is.l.m:302010:a.ar.i.t:3210:a.ho.l.t:20130:i.ni.ov.s.ti:320134:ik.iä.k.le:3021"},
+    {info: "INFO: >FIN:5:i.r.s.u:1302:a.gu.ja.ri:21003:er.i.on.p.pe:433021:e.l.li.n.o:410012303:a.i.k.m.nt.se:530411220"},
 ];
 
 const challengeSetENG = [
