@@ -135,9 +135,11 @@ function uiBoardRedraw(board) {
             boardContext.stroke();
 
             /* Fragment */
-            boardContext.textAlign    = "center";
-            boardContext.fillStyle    = strokeColor;
-            boardContext.fillText(board.fragments[x][y], middleX, middleY);
+            if (board.rowSolved[y] == false) {
+                boardContext.textAlign    = "center";
+                boardContext.fillStyle    = strokeColor;
+                boardContext.fillText(board.fragments[x][y], middleX, middleY);
+            }
         }
     }
 

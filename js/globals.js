@@ -5,7 +5,7 @@ var globals = {
     game:           undefined,
     storage:        undefined,
 
-    boardMaxSize:   6,
+    boardMaxSize:   7,
     boardRowMargin: 0.10,
 
     uiKeyPressed:   undefined,
