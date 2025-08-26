@@ -26,8 +26,8 @@ const challengeSetITA = [
 ];
 
 const challengeSetSWE = [
-    {info: "INFO: >SWE:5:a.e.p.r:212203:a.e.k.l.n:20413:a.i.k.p.r:3034120:k.m.o.s.t.u:153024:a.d.e.k.m.r.u:3051246440"},
     {info: "INFO: >SWE:5:a.d.l.s:302201:a.e.f.l:2030213:a.p.s.t:10230:h.i.s.u:23201:i.o.r.s.t:2031441"},
+    {info: "INFO: >SWE:5:a.e.p.r:212203:a.e.k.l.n:20413:a.i.k.p.r:3034120:k.m.o.s.t.u:153024:a.d.e.k.m.r.u:3051246440"},
     {info: "INFO: >SWE:5:a.i.k.p.r:3034120:e.i.l.r.s:4022031:a.i.o.p.s.t:3250514:b.c.i.l.o.r:05411432:b.k.l.m.o.å:0243152"},
 ];
 
