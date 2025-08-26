@@ -4,23 +4,17 @@ const strorageName = "lexicorium/game-progress";
  * Game challenges (levels)
  *****************************************************************************/
 const challengeSetFIN = [
-    {info: "INFO: >FIN:5:h.i.k.s.y.ä:5025134:a.k.p.r.u:20314:i.k.t.u:0213:e.j.l.s.u:4102243:a.n.r.u:10323"},
-    {info: "INFO: >FIN:5:a.h.j.k.u:14413020:e.l.m.n.p.u:45125303:i.l.t.y:23110:e.k.l.o.s:1341023:h.i.n.r.ä:24301"},
-    {info: "INFO: >FIN:5:e.h.m.u:13320:k.m.r.y:132003:a.i.k.n.o:24201131:a.i.o.p.t:23100441:a.b.i.n.o.t:03521244552"},
-    {info: "INFO: >FIN:5:a.e.i.k.l.r:3144052:a.k.o.t:10332:k.t.v.y.ä:0431424:e.i.n.t:0301202:a.k.t:20110"},
-    {info: "INFO: >FIN:5:ai.t.us.vu:10312:i.ne.tr.u:1320:at.i.iv.n.om:34130121:e.la.s.u:1320:k.ku.l.pi:3201"},
-    {info: "INFO: >FIN:5:a.el.i.p.s:40312:as.i.ko.mp.s:23041:a.k.ro.u:131102:ik.ko.l.ta:3201:i.iv.lä.s:30102"},
+    {info: "INFO: >FIN:5:a.j.n.o:1023:i.l.u.v:3012:i.k.p.u:1023:h.k.y.ä:3012:k.l.n.ä:23103"}, // physical feelings
+    {info: "INFO: >FIN:5:a.p.r.u:13211320:e.i.n.s:3121202:i.k.n.p:302110:a.e.i.n.p.u:45302313:a.e.i.k.l.n.t:314602515"}, // colors
+    {info: "INFO: >FIN:5:a.b.i.r:030120:d.h.i.n:12302:a.i.l.n.t:204130:a.d.i.m.n.r:3041052242:a.e.g.i.l.n.t:15240563"}, // languages
+    {info: "INFO: >FIN:5:a.h.i.m:10230:a.i.p.s:30221:a.k.m.s:20130:a.e.n.p.r:31420:a.e.i.m.n.u:354502414"}, // internal organs
+    {info: "INFO: >FIN:5:i.l.o.p:32102:o.r.t.u:13220:a.e.l.p.r:21340:a.i.l.m.r:3020410:a.i.l.p.s.t:43150021"}, // infectious diseases
 
-    {info: "INFO: >FIN:5:i.l.o.v:210030:a.k.r.v:10230:a.i.l.m.r:03140021:a.e.h.k.t.u:212354400:a.k.l.u:10320"},
-    {info: "INFO: >FIN:5:a.e.i.l.p.s:142314520:e.i.l.n.t.v:503441121:a.i.r.t:21130:e.i.k.n.s:204201303:e.i.n.t:0321202"},
-    {info: "INFO: >FIN:5:e.l.mp.ys:10203:a.ta.vit:0210:jum.p.pa:012:a.n.rsk.tel.u.ut:102534:a.k.r.uss:230110"},
-    {info: "INFO: >FIN:5:b.ler.o:0212:a.h.me:102:a.ik.it.k:2130:l.o.rdi:012:s.yv.ä:012"},
-
-    {info: "INFO: >FIN:5:a.h.i.l.v:321040:at.i.p.r.s.yk:2451031:a.em.n.ol.to:31042:en.in.ju.lk:2310:e.r.u:22110"},
-    {info: "INFO: >FIN:5:im.pi.ä:102:jä.k.ky.y.ys:03124:a.s.ti:0120:ai.as.m:210:ke.ky.t.ä:1203"},
-    {info: "INFO: >FIN:5:a.h.ko.o.t:2134400:a.al.i.l.p.ur:435012:k.n.ne.nä.öi:30421:au.l.ta:102:ni.s.to.uo:13012"},
-    {info: "INFO: >FIN:5:i.is.l.m:302010:a.ar.i.t:3210:a.ho.l.t:20130:i.ni.ov.s.ti:320134:ik.iä.k.le:3021"},
-    {info: "INFO: >FIN:5:i.r.s.u:1302:a.gu.ja.ri:21003:er.i.on.p.pe:433021:e.l.li.n.o:410012303:a.i.k.m.nt.se:530411220"},
+    {info: "INFO: >FIN:5:n.t.y:12202:a.j.p.t:20310:a.k.l.n:201030:i.l.t.v:301220:e.i.o.p.t:301442"}, // bedclothes
+    {info: "INFO: >FIN:5:a.o.s.t:120231:e.j.k.o.u:1342240:a.j.l.n.o.p.t:5060214430:a.i.k.m.n.o.p:253660410:a.d.i.n.o.s.v:1262524430"}, // military groups
+    {info: "INFO: >FIN:5:a.b.e.g.r:3241240:a.i.n.r.s:20341441:a.d.e.i.k.o.r:5643120:a.h.i.n.s.t.y:160423552:a.i.l.n.p.t.u:562440031"}, // flowers
+    {info: "INFO: >FIN:5:e.i.s.t:20131:a.d.i.n.r.s:50412232:a.i.k.l.m.r:40251331:a.k.r.s.t.u:452310:a.e.i.k.n.r.s:04315206"}, // sea fishes
+    {info: "INFO: >FIN:5:a.h.i.s:10323:a.i.k.n.o:24201131:a.b.i.k.n.s:30440125:e.h.i.n.o.r:10542232:a.h.i.m.n.r.u:305216040"}, // drugs
 ];
 
 const challengeSetENG = [
