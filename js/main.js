@@ -5,16 +5,16 @@ const strorageName = "lexicorium/game-progress";
  *****************************************************************************/
 const challengeSetFIN = [
     {info: "INFO: >FIN:5:a.j.n.o:1023:i.l.u.v:3012:i.k.p.u:1023:h.k.y.ä:3012:k.l.n.ä:23103"}, // physical feelings
-    {info: "INFO: >FIN:5:a.p.r.u:13211320:e.i.n.s:3121202:i.k.n.p:302110:a.e.i.n.p.u:45302313:a.e.i.k.l.n.t:314602515"}, // colors
-    {info: "INFO: >FIN:5:a.b.i.r:030120:d.h.i.n:12302:a.i.l.n.t:204130:a.d.i.m.n.r:3041052242:a.e.g.i.l.n.t:15240563"}, // languages
     {info: "INFO: >FIN:5:a.h.i.m:10230:a.i.p.s:30221:a.k.m.s:20130:a.e.n.p.r:31420:a.e.i.m.n.u:354502414"}, // internal organs
-    {info: "INFO: >FIN:5:i.l.o.p:32102:o.r.t.u:13220:a.e.l.p.r:21340:a.i.l.m.r:3020410:a.i.l.p.s.t:43150021"}, // infectious diseases
-
     {info: "INFO: >FIN:5:n.t.y:12202:a.j.p.t:20310:a.k.l.n:201030:i.l.t.v:301220:e.i.o.p.t:301442"}, // bedclothes
     {info: "INFO: >FIN:5:a.o.s.t:120231:e.j.k.o.u:1342240:a.j.l.n.o.p.t:5060214430:a.i.k.m.n.o.p:253660410:a.d.i.n.o.s.v:1262524430"}, // military groups
-    {info: "INFO: >FIN:5:a.b.e.g.r:3241240:a.i.n.r.s:20341441:a.d.e.i.k.o.r:5643120:a.h.i.n.s.t.y:160423552:a.i.l.n.p.t.u:562440031"}, // flowers
     {info: "INFO: >FIN:5:e.i.s.t:20131:a.d.i.n.r.s:50412232:a.i.k.l.m.r:40251331:a.k.r.s.t.u:452310:a.e.i.k.n.r.s:04315206"}, // sea fishes
+
+    {info: "INFO: >FIN:5:i.l.o.p:32102:o.r.t.u:13220:a.e.l.p.r:21340:a.i.l.m.r:3020410:a.i.l.p.s.t:43150021"}, // infectious diseases
     {info: "INFO: >FIN:5:a.h.i.s:10323:a.i.k.n.o:24201131:a.b.i.k.n.s:30440125:e.h.i.n.o.r:10542232:a.h.i.m.n.r.u:305216040"}, // drugs
+    {info: "INFO: >FIN:5:a.p.r.u:13211320:e.i.n.s:3121202:i.k.n.p:302110:a.e.i.n.p.u:45302313:a.e.i.k.l.n.t:314602515"}, // colors
+    {info: "INFO: >FIN:5:a.b.i.r:030120:d.h.i.n:12302:a.i.l.n.t:204130:a.d.i.m.n.r:3041052242:a.e.g.i.l.n.t:15240563"}, // languages
+    {info: "INFO: >FIN:5:a.b.e.g.r:3241240:a.i.n.r.s:20341441:a.d.e.i.k.o.r:5643120:a.h.i.n.s.t.y:160423552:a.i.l.n.p.t.u:562440031"}, // flowers
 ];
 
 const challengeSetENG = [
