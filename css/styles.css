@@ -91,6 +91,9 @@
   50% { opacity: 0; }
 }
 
+html, body {
+  touch-action: manipulation; /* Prevents double-tap zoom but allows scrolling/pinch */
+}
 
 #game-board {
     margin-top:     0mm;
