@@ -122,10 +122,12 @@ function uiMouseLeave(event) {
 }
 
 function uiScreenMouseDown() {
-    globals.game.board.statusClear();
+    if (globals.game.board.getWordStatus().length > 0) {
+        globals.game.board.statusClear();
 
-    /* Redraw UI */
-    uiRedraw();
+        /* Redraw UI */
+        uiRedraw();
+    }
 }
 
 
@@ -139,5 +141,5 @@ elements.board.addEventListener("mouseleave", uiMouseLeave);
 elements.board.addEventListener("touchstart", uiMouseDown, {passive: true});
 elements.board.addEventListener("touchend",   uiMouseUp);
 
-document.addEventListener("mousedown", uiScreenMouseDown);
+document.addEventListener("pointerdown", uiScreenMouseDown);
 
