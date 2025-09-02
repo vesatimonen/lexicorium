@@ -74,11 +74,11 @@ function uiBoardRedraw(board) {
 
     const colorStrokeEnabled  = "#000000";
     const colorStrokeDisabled = "#000000A0";
-    const colorStrokeSolved   = "#00000020";
+    const colorStrokeSolved   = "#00000000";
 
     const colorButtonEnabled  = "#9DD5FA";   // from CSS 8BCEF5 / #B0DDFF
     const colorButtonDisabled = "#9DD5FAA0";
-    const colorButtonSolved   = "#9DD5FA20";
+    const colorButtonSolved   = "#9DD5FA00";
     const colorButtonDown     = "#67BFEC";   // from CSS
 
     /* Define board font */
