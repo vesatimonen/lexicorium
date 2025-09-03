@@ -17,6 +17,20 @@ const challengeSetFIN = [
     {info: "INFO: >FIN:5:a.b.e.g.r:3241240:a.i.n.r.s:20341441:a.d.e.i.k.o.r:5643120:a.h.i.n.s.t.y:160423552:a.i.l.n.p.t.u:562440031"}, // flowers
 ];
 
+const challengeSetFIN2 = [
+    {info: "INFO: >FIN:5:a.l.o.s:3012:a.b.o.s.t:124403:b.e.g.o.r.s:4350142:e.h.i.k.n.ä:15332404:e.i.k.n.r.ä.ö:451226303"},            // F1 drivers
+    {info: "INFO: >FIN:5:e.k.n.o:10113202:a.i.k.l.o:203314:a.e.h.l.n.o:2035414:a.i.k.p.s.v:300412151:i.k.o.s.t.v:12050342"},          // presidents
+    {info: "INFO: >FIN:5:a.k.l.o:132110:h.i.p.y.ä:033214:a.i.n.o.t:401213:a.e.n.p.s:3040212:a.e.i.l.m.n.t:32640515"},                 // football players
+    {info: "INFO: >FIN:5:a.k.l.u:13320:e.k.n.o:13113202:a.e.i.l.n.s:50332414:b.e.i.l.s.u:42013254:a.d.e.j.m.o.t:40126530"},           // composers
+    {info: "INFO: >FIN:5:a.k.l.o.t:401023:e.n.o.p.r:4232101:a.e.i.n.r.s:50042313:e.h.i.l.m.n.ä:1646362505:a.e.i.k.m.n.t:4062302515"}, // female skiers
+
+    {info: "INFO: >FIN:5:e.i.n.r:30121:e.n.v.ä:23313101:a.e.n.t.v:4030212:a.l.o.s.u:3423012:a.e.i.l.m.p:3155230452"},                 // male actors
+    {info: "INFO: >FIN:5:a.e.h.l.n:213140:a.e.l.s.v:413020:a.e.i.n.r.t.v:6045202313:a.e.m.o.r.t.v:51463200:a.i.k.l.m.u.v:613225400"}, // female artists
+    {info: "INFO: >FIN:5:l.m.y.ä:1200203:e.i.m.o.t:21043:a.e.i.k.n.s:42530414:a.m.n.r.t.y.ä:1624530240:e.i.m.o.s.t.ä:14320546"},      // male skiers
+    {info: "INFO: >FIN:5:a.i.l.t.v:4113020:e.k.n.o.s:1343202:i.l.p.y.ä:310244:a.e.k.l.m.o:2314530:a.h.k.l.p.y.ä:10042536"},           // female actresses
+    {info: "INFO: >FIN:5:a.l.o.t:0103012:a.k.l.n.o:020314:e.k.n.t.u:10334202:e.i.k.l.n.s:30521404:e.k.n.o.s.t.u:166453202"},          // male artists
+];
+
 const challengeSetENG = [
     {info: "INFO: F03.0 W05(09.6) R00000-02000 P03.2 L0-1-2-2-0-0-0-0 S01 T0000001 W015 >4x4-ENG-fes-sor-con-end-pro-con-str-fri-vat-ser-uct-ion-ive-age-ant-adv"},
 ];
@@ -52,6 +66,10 @@ function parseOptions() {
         case "FIN":
             options.challenges = challengeSetFIN;
             globals.storage    = strorageName + "-FIN";
+            break;
+        case "FIN2":
+            options.challenges = challengeSetFIN2;
+            globals.storage    = strorageName + "-FIN2";
             break;
         case "SWE":
             options.challenges = challengeSetSWE;
