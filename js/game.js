@@ -106,6 +106,17 @@ class Board {
         this.colPressed.fill(false);
     }
 
+    wordDelete() {
+        if (this.wordText.length > 0) {
+            this.wordText = this.wordText.substring(0, this.wordText.length - 1);
+            if (this.wordText.length == 0) {
+                this.rowPressed.fill(false);
+                this.colPressed.fill(false);
+            }
+        }
+
+    }
+
     statusClear() {
         if (this.wordStatus.length > 0) {
             this.wordStatus = "";

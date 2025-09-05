@@ -10,6 +10,14 @@ function uiClear() {
     return false;
 }
 
+function uiDelete() {
+    globals.game.board.wordDelete();
+
+    /* Redraw UI */
+    uiRedraw();
+    return false;
+}
+
 function uiEnter() {
     globals.game.board.wordEnter();
 
@@ -42,13 +50,16 @@ function uiKeyboard(event) {
     if (event.key === 'Escape') {
         uiClear();
     }
+    if (event.key === 'Backspace') {
+        uiDelete();
+    }
 }
 
 
 /*****************************************************************************
  * Register button event handlers
  *****************************************************************************/
-elements.buttonClear.addEventListener("click", uiClear);
+elements.buttonDelete.addEventListener("click", uiDelete);
 elements.buttonEnter.addEventListener("click", uiEnter);
 
 function preventZoom(event) {

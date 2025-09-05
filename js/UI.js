@@ -16,12 +16,12 @@ function uiBoardCellSize() {
  *****************************************************************************/
 function uiButtonsRedraw(board) {
     if (board.getWordText().length > 0 && board.getWordStatus().length == 0) {
-        elements.buttonEnter.disabled = false;
-        elements.buttonClear.disabled = false;
+        elements.buttonEnter.disabled  = false;
+        elements.buttonDelete.disabled = false;
     } else {
-//    elements.buttonClear.style.height = "50px";
-        elements.buttonEnter.disabled = true;
-        elements.buttonClear.disabled = true;
+//    elements.buttonDelete.style.height = "50px";
+        elements.buttonEnter.disabled  = true;
+        elements.buttonDelete.disabled = true;
     }
 }
 
