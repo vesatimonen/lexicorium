@@ -215,7 +215,7 @@ class Board {
             /* Parse word fragments */
             let fragments = fields[field].split('.');
             for (let fragment = 0; fragment < fragments.length; fragment++) {
-                this.fragments[fragment][row] = fragments[fragment];
+                this.fragments[fragment][row] = fragments[fragment].toUpperCase();
             }
 
             /* Determine width of board */
